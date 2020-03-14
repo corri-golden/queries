@@ -1,6 +1,7 @@
 from django.db import models
 from .book import Book
 from .agent import Agent
+from .status import Status
 from django.contrib.auth.models import User
 
 class Query(models.Model):
@@ -12,6 +13,7 @@ class Query(models.Model):
     sent = models.DateField()
     expiration = models.DateField()
     book = models.ForeignKey(Book,on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
     
 
     class Meta:
@@ -19,7 +21,7 @@ class Query(models.Model):
         verbose_name_plural = ("queries")
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def get_absolute_url(self):
         return reverse("query_detail", kwargs={"pk": self.pk})
