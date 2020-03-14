@@ -1,0 +1,1 @@
+from .queries.list import query_list
