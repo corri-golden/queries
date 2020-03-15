@@ -6,4 +6,5 @@ app_name = "queriesapp"
 urlpatterns = [
     path('', query_list, name='home'),
     path('queries/', query_list, name='queries'),
+    path('queries/form', queries_form, name='queries_form'),
 ]
