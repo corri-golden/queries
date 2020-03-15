@@ -35,7 +35,7 @@ def query_list(request):
         print(new_query.user.username)
         new_query.save()
 
-        return redirect(reverse('queriesapp:query'))
+        return redirect(reverse('queriesapp:query_form'))
 
 
 
