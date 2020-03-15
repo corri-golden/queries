@@ -8,7 +8,8 @@
     {% comment %} <a href="{% url 'queriesapp:list' %}">Add Book</a> {% endcomment %}
 
     <h1>Queries</h1>
-    <button>Add Query</button>
+    
+    <a href="{% url 'queriesapp:queries_form' %}">Add Query</a>
     <div>
     <h2>Pending</h2>
     {% for query in all_queries %}
