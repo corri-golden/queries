@@ -11,35 +11,36 @@
     <button>Add Query</button>
     <div>
     <h2>Pending</h2>
-    <ol>
     {% for query in all_queries %}
-        <li>
-          {{query.notes}}
-        </li>
+          {{query.agent.agent_name}}
+          </br>
+          {{query.agent.email}}
+          </br>
+          {{query.sent}}-{{query.expiration}}
+          </br>
     {% endfor %}
-    </ol>
-    <div>
+    </div>
     
     <div>
     <h2>FollowUp</h2>
-    <ol>
+    
     {% for query in all_queries %}
-        <li>
-          {{query.notes}}
-        </li>
-    {% endfor %}
-    </ol>
-    </div>
-
-    <div>
+      {{query.agent.agent_name}}
+          </br>
+          {{query.agent.email}}
+          </br>
+          {{query.sent}}-{{query.expiration}}
+          </br>
+      {% endfor %}
     <h2>Rejected</h2>
-    <ol>
     {% for query in all_queries %}
-        <li>
-          {{query.notes}}
-        </li>
-    {% endfor %}
-    </ol> 
+    {{query.agent.agent_name}}
+          </br>
+          {{query.agent.email}}
+          </br>
+          {{query.sent}}-{{query.expiration}}
+          </br>
+          {% endfor %}
     </div>
   </body>
 </html>
