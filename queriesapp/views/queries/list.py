@@ -23,12 +23,12 @@ def query_list(request):
         form_data = request.POST
         #instantiate
         new_query = Query(
-            notes = form_data['title'],
+            notes = form_data['notes'],
             agent_id = form_data['agent'],
             sent = form_data['sent'],
             expiration = form_data['expiration'],
-            book = form_data['book'],
-            status = form_data['status'],
+            book_id = form_data['book'],
+            status_id = form_data['status'],
             user_id = request.user.id
         )
         # and then save to the db
