@@ -8,7 +8,7 @@ def get_query(query_id):
 
     return Query.objects.get(pk=query_id)
 
-# @login_required
+# @login_required dd
 def query_details(request, query_id):
     if request.method == 'GET':
         query = get_query(query_id)
