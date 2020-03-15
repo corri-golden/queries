@@ -13,35 +13,44 @@
     <div>
     <h2>Pending</h2>
     {% for query in all_queries %}
-          {{query.agent.agent_name}}
+          <div>
+         <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a>
           </br>
           {{query.agent.email}}
           </br>
           {{query.sent}}-{{query.expiration}}
           </br>
+          </div>
     {% endfor %}
-    </div>
+    
+    
     
     <div>
     <h2>FollowUp</h2>
     
     {% for query in all_queries %}
+        <div>
       {{query.agent.agent_name}}
           </br>
           {{query.agent.email}}
           </br>
           {{query.sent}}-{{query.expiration}}
           </br>
+          </div>
       {% endfor %}
+      
     <h2>Rejected</h2>
     {% for query in all_queries %}
-    {{query.agent.agent_name}}
+          <div>
+          {{query.agent.agent_name}}
           </br>
           {{query.agent.email}}
           </br>
           {{query.sent}}-{{query.expiration}}
           </br>
+          </div>
           {% endfor %}
+    
     </div>
   </body>
 </html>
