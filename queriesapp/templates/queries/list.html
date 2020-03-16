@@ -9,6 +9,7 @@
     <h1>Queries</h1>
     
     <a href="{% url 'queriesapp:queries_form' %}">Add Query</a>
+    <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
     <div>
     <h2>Pending</h2>
     {% for query in all_queries %}
