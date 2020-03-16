@@ -14,3 +14,8 @@
     <div>Notes: {{query.notes}}
   </body>
 </html>
+<form action="{% url 'queriesapp:query' query.id %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="actual_method" value="DELETE">
+    <button>Delete</button>
+</form>

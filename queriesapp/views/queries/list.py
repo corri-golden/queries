@@ -1,4 +1,4 @@
-from django.shortcuts import render, render, reverse
+from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Query
 from ..connection import Connection
 
@@ -12,6 +12,11 @@ def query_list(request):
         # if notes is not None:
         #     all_queries = all_queries.filter(notes__contains=notes)
 
+        # agent_name = request.GET.get('agent_name', None)
+        
+        # if agent_name is not None:
+        #     all_queries = all_queries.filter(query__contains=query)
+
         template = 'queries/list.html'
         context = {
             'all_queries': all_queries
@@ -24,18 +29,18 @@ def query_list(request):
         #instantiate
         new_query = Query(
             notes = form_data['notes'],
-            agent_id = form_data['agent'],
+            agent_id = form_data['agent_id'],
             sent = form_data['sent'],
             expiration = form_data['expiration'],
-            book_id = form_data['book'],
-            status_id = form_data['status'],
+            book_id = form_data['book_id'],
+            status_id = form_data['status_id'],
             user_id = request.user.id
         )
         # and then save to the db
         print(new_query.user.username)
         new_query.save()
 
-        return redirect(reverse('queriesapp:query_form'))
+        return redirect(reverse('queriesapp:queries'))
 
 
 
