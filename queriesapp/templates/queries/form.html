@@ -11,31 +11,44 @@
 
     <form action="{% url 'queriesapp:queries' %}" method="post">
       {% csrf_token %}
+      <label for="agent">Agent:</label>
+      <select id="agent_id" type="text" name="agent_id">
+                {% for agent in all_agents %}
+                    <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
+                {% endfor %} 
+    </select>
+      {% comment %} <fieldset>
+          <label for="agent_id">Agent: </label>
+          <input id="agent_id" type="text" name="agent_id">
+      </fieldset> {% endcomment %}
+      {% comment %} <fieldset>
+          <label for="company">Agent's Company: </label>
+          <input id="company" type="text" name="company">
+      </fieldset> {% endcomment %}
+      {% comment %} <fieldset>
+          <label for="email">Agent's Email: </label>
+          <input id="email" type="text" name="email">
+      </fieldset> {% endcomment %}
       <fieldset>
-          <label for="agent">Agent: </label>
-          <input id="agent" type="text" name="agent">
-      </fieldset>
-      <fieldset>
-          <label for="agent's company">Agent's Company: </label>
-          <input id="agent's company" type="text" name="agent's company">
-      </fieldset>
-      <fieldset>
-          <label for="agent's email">Agent's Email: </label>
-          <input id="agent's email" type="text" name="agent's email">
-      </fieldset>
-      <fieldset>
-          <label for="submission">Submission Date: </label>
-          <input id="submission" type="date" name="submission">
+          <label for="sent">Submission Date: </label>
+          <input id="sent" type="date" name="sent">
       </fieldset>
       <fieldset>
           <label for="expiration">Expiration: </label>
           <input id="expiration" type="date" name="expiration">
-          {% comment %} <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                    <option value="{{ library.id }}">{{ library.title }}</option>
-                {% endfor %} {% endcomment %}
-          </select>
+        </fieldset>
+        <fieldset>
+          <label for="notes">Notes: </label>
+          <input id="notes" type="text" name="notes">
+        </fieldset>
+        <fieldset>
+          <label for="status_id">Status: </label>
+          <input id="status_id" type="text" name="status_id" defaultValue=1>
       </fieldset>
+      <fieldset>
+          <label for="book_id">Book: </label>
+          <input id="book_id" type="text" name="book_id">
+        </fieldset>
 
       <input type="submit" value="Add It" />
     </form>

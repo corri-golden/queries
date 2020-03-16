@@ -1,11 +1,10 @@
-{% comment %} {% load staticfiles %} {% endcomment %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
   </head>
   <body>
-    {% comment %} <a href="{% url 'queriesapp:list' %}">Add Book</a> {% endcomment %}
+    
 
     <h1>Queries</h1>
     
@@ -29,7 +28,9 @@
     <h2>FollowUp</h2>
     
     {% for query in all_queries %}
-        <div>
+      {% comment %} if (query.status.id == 2): {% endcomment %}
+      
+      <div>
       {{query.agent.agent_name}}
           </br>
           {{query.agent.email}}
