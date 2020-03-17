@@ -10,4 +10,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('queries/form', queries_form, name='queries_form'),
     path('queries/<int:query_id>/', query_details, name='query'),
+    path('agents/form', agents_form, name='agents_form'),
+    path('agents/', agent_list, name='agents'),
 ]
