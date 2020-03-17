@@ -9,7 +9,7 @@
     <h1>Queries</h1>
     
     <a href="{% url 'queriesapp:queries_form' %}">Add Query</a>
-    <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
+    
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     <div>
     <h2>Pending</h2>
@@ -53,6 +53,8 @@
           </br>
           </div>
           {% endfor %}
+
+      <a href="{% url 'queriesapp:agents' %}">Agent List</a>
     
     </div>
   </body>
