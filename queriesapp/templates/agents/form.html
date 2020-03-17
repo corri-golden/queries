@@ -10,7 +10,8 @@
 
 
 
-    <form action="{% url 'queriesapp:queries' %}" method="post">
+    <form action="{% url 'queriesapp:agents' %}" method="post">
+    {% csrf_token %}
         <fieldset>
           <label for="agent_name">Agent's Name: </label>
           <input id="agent_name" type="text" name="agent_name">
@@ -23,6 +24,7 @@
           <label for="email">Agent's Email: </label>
           <input id="email" type="text" name="email">
         </fieldset>
+        <input type="submit" value="Add It" />
     </form>
   </body>
 </html>

@@ -1,7 +1,7 @@
 import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from queriesapp.models import Query
+from queriesapp.models import Agent
 from ..connection import Connection
 from queriesapp.models import Agent
 
