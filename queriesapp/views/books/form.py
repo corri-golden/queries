@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from queriesapp.models import Agent
+from queriesapp.models import Book
 from ..connection import Connection
 from queriesapp.models import Agent
 
 
-def get_books():
-    # if request.method == 'GET':
-    all_books = Book.objects.all()
-    return all_books
+# def get_books():
+#     # if request.method == 'GET':
+#     all_books = Book.objects.all()
+#     return all_books
 
 
 

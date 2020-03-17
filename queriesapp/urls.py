@@ -13,4 +13,5 @@ urlpatterns = [
     path('agents/form', agents_form, name='agents_form'),
     path('agents/', agent_list, name='agents'),
     path('books/form', book_form, name='book_form'),
+    path('books/', book_list, name='books')
 ]

@@ -6,19 +6,19 @@ from ..connection import Connection
 
 def book_list(request):
     if request.method == 'GET':
-        all_agents = Book.objects.all()
+        all_books = Book.objects.all()
 
         template = 'books/list.html'
-        # context = {
-        #     'all_books': all_books
-        # }   
+        context = {
+            'all_books': all_books
+        }   
 
-        return render(request, template)
+        return render(request, template, context)
 
 
 
-    # elif request.method == 'POST':
-    #     form_data = request.POST
+    elif request.method == 'POST':
+        form_data = request.POST
         #instantiate
         # new_agent = Agent(
         #     agent_name = form_data['agent_name'],
@@ -30,12 +30,11 @@ def book_list(request):
         # print(new_agent.user.username)
         # new_agent.save()
 
-        # new_agent = Agent.objects.create(
-        #     agent_name = form_data['agent_name'],
-        #     company = form_data['company'],
-        #     email = form_data['email'],
-        #     # user_id = request.user.id
-        # )
+        new_book = Book.objects.create(
+            book_name = form_data['book_name'],
+            num_of_pages = form_data['num_of_pages'],
+            user_id = request.user.id
+        )
         
 
-        return redirect(reverse('queriesapp:queries'))
+        return redirect(reverse('queriesapp:books'))

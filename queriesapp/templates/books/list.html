@@ -9,7 +9,12 @@
 <body>
 
     <h1>Welcome to Queries</h1>
-    <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a>
+    <div>
+    {% for book in all_books %}
+    <a href="{% url 'queriesapp:query' book.id %}"> {{book.book_name}}<a>
+    {% endfor %}
+    </div>
+    {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
     <a href="{% url 'queriesapp:book_form' %}">Add Book</a>
 
 

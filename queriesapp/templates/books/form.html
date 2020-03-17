@@ -9,7 +9,7 @@
     <h1>Books</h1>
 
 
-    <form action="{% url 'queriesapp:queries' %}" method="post">
+    <form action="{% url 'queriesapp:books' %}" method="post">
       {% csrf_token %}
       <fieldset>
           <label for="book_name">Book Title: </label>
