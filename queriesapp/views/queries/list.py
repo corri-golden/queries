@@ -7,10 +7,10 @@ def query_list(request):
     if request.method == 'GET':
         all_queries = Query.objects.all()
 
-        # notes = request.GET.get('notes', None)   
+        bookid = request.GET.get('bookid', None)   
 
-        # if notes is not None:
-        #     all_queries = all_queries.filter(notes__contains=notes)
+        if bookid is not None:
+            all_queries = all_queries.filter(book_id=bookid)
 
         # agent_name = request.GET.get('agent_name', None)
         
