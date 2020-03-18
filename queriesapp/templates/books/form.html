@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bangazon</title>
+  </head>
+  <body>
+    <h1>Books</h1>
+
+
+    <form action="{% url 'queriesapp:books' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <label for="book_name">Book Title: </label>
+          <input id="book_name" type="text" name="book_name">
+      </fieldset>
+      <fieldset>
+          <label for="num_of_pages">Number of Pages: </label>
+          <input id="num_of_pages" type="text" name="num_of_pages">
+      </fieldset>
+      {% comment %} <fieldset>
+          <label for="location">Library: </label>
+          <select id="location" type="text" name="location">
+                {% for library in all_libraries %}
+                    <option value="{{ library.id }}">{{ library.title }}</option>
+                {% endfor %}
+          </select>
+      </fieldset> {% endcomment %}
+
+      <input type="submit" value="Add It" />
+    </form>
+  </body>
+</html>

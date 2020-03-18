@@ -17,6 +17,7 @@
                     <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
                 {% endfor %} 
     </select>
+    <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
       {% comment %} <fieldset>
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">

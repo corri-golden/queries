@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nashville Library Management System</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Queries</h1>
+    <div>
+    {% for book in all_books %}
+    <a href="{% url 'queriesapp:query' book.id %}"> {{book.book_name}}<a>
+    {% endfor %}
+    </div>
+    {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
+    <a href="{% url 'queriesapp:book_form' %}">Add Book</a>
+
+
+</body>
+
+</html>

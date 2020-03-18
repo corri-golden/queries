@@ -20,6 +20,17 @@ def agents_form(request):
         # context = {
         #     'all_agents': agents
         # }
-        
+
+# @login_required
+# def agent_edit_form(request, agent_id):
+
+    # if request.method == 'GET':
+    #     agent = get_agent(agent_id)
+
+    #     template = 'agents/form.html'
+    #     context = {
+    #         'agent': agent,
+    #     }
 
         return render(request, template)
+        
