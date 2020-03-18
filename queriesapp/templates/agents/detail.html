@@ -16,8 +16,8 @@
     <input type="hidden" name="actual_method" value="DELETE">
     <button>Delete</button>
 </form>
-    {% comment %} <form action="{% url 'queriesapp:agent_edit_form' agent.id %}" method="GET">
+    <form action="{% url 'queriesapp:agent_edit_form' agent.id %}" method="GET">
             {% csrf_token %}
     <button>Edit</button>
-    </form> {% endcomment %}
+    </form> 
 </form>

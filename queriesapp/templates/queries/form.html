@@ -8,7 +8,7 @@
   <body>
     <h1>New Query</h1>
 
-
+    <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
     <form action="{% url 'queriesapp:queries' %}" method="post">
       {% csrf_token %}
       <label for="agent">Agent:</label>
@@ -17,7 +17,6 @@
                     <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
                 {% endfor %} 
     </select>
-    <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
       {% comment %} <fieldset>
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">

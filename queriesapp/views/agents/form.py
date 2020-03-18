@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from queriesapp.models import Agent
 from ..connection import Connection
 from queriesapp.models import Agent
+from .details import get_agent
 
 
 def get_agents():
@@ -21,16 +22,18 @@ def agents_form(request):
         #     'all_agents': agents
         # }
 
-# @login_required
-# def agent_edit_form(request, agent_id):
-
-    # if request.method == 'GET':
-    #     agent = get_agent(agent_id)
-
-    #     template = 'agents/form.html'
-    #     context = {
-    #         'agent': agent,
-    #     }
-
         return render(request, template)
+
+# @login_required
+def agent_edit_form(request, agent_id):
+
+    if request.method == 'GET':
+        agent = get_agent(agent_id)
+
+        template = 'agents/form.html'
+        context = {
+            'agent': agent,
+        }
+
+        return render(request, template, context)
         

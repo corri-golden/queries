@@ -15,5 +15,5 @@ urlpatterns = [
     path('books/form', book_form, name='book_form'),
     path('books/', book_list, name='books'),
     path('agents/<int:agent_id>/', agent_details, name='agent'),
-    # path('agents/<int:agent_id>/form/', agent_edit_form, name='agent_edit_form')
+    path('agents/<int:agent_id>/form/', agent_edit_form, name='agent_edit_form')
 ]
