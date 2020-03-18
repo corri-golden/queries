@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>New Query</h1>
-
+    
     <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
     <form action="{% url 'queriesapp:queries' %}" method="post">
       {% csrf_token %}
