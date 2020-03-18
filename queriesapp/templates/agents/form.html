@@ -8,23 +8,34 @@
   <body>
     <h1>New Agent</h1>
 
-
+    {% if agent.id is not None %}
+        <form action="{% url 'queriesapp:agent' agent.id %}" method="post">
+    {% else %}
 
     <form action="{% url 'queriesapp:agents' %}" method="post">
+    {% endif %}
     {% csrf_token %}
         <fieldset>
           <label for="agent_name">Agent's Name: </label>
-          <input id="agent_name" type="text" name="agent_name">
+          <input id="agent_name" type="text" name="agent_name" value="{{ agent.agent_name }}">
         </fieldset>
         <fieldset>
           <label for="company">Agent's Company: </label>
-          <input id="company" type="text" name="company">
+          <input id="company" type="text" name="company" value="{{ agent.company }}">
         </fieldset>
         <fieldset>
           <label for="email">Agent's Email: </label>
-          <input id="email" type="text" name="email">
+          <input id="email" type="text" name="email" value="{{ agent.email }}">
         </fieldset>
-        <input type="submit" value="Add It" />
+        {% comment %} <input type="submit" value="Add It" /> {% endcomment %}
+
+    {% if agent.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
+
     </form>
   </body>
 </html>
