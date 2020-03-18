@@ -30,8 +30,7 @@
     <h2>FollowUp</h2>
     
     {% for query in all_queries %}
-      {% comment %} if (query.status.id == 2): {% endcomment %}
-      
+      {% if query.status.id == 2 %} 
       <div>
       {{query.agent.agent_name}}
           </br>
@@ -40,6 +39,7 @@
           {{query.sent}}-{{query.expiration}}
           </br>
           </div>
+      {% endif %}
       {% endfor %}
       
     <h2>Rejected</h2>
