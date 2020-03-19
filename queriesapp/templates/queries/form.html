@@ -1,56 +1,83 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>New Query</title>
   </head>
   <body>
-    <h1>New Query</h1>
+    {% extends 'shared/base.html' %}
 
+    {% block content %}
+    {% comment %} <h1>New Query</h1> {% endcomment %}
+    
     <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
+    
+    
+    {% if query.id is not None %}
+      <h1>Edit Project</h1>
+      <form action="{% url 'queriesapp:query' query.id %}" method="post">
+    {% else %}
+    <h1>New Project</h1>
     <form action="{% url 'queriesapp:queries' %}" method="post">
+    {% endif %}
       {% csrf_token %}
       <label for="agent">Agent:</label>
-      <select id="agent_id" type="text" name="agent_id">
+      {% comment %} <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
                     <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
                 {% endfor %} 
-    </select>
+    </select> {% endcomment %}
+
+      <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
+                {% for agent in all_agents %}
+                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name }}</option>
+                {% endfor %} 
+      </select>
+
+
       {% comment %} <fieldset>
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">
       </fieldset> {% endcomment %}
-      {% comment %} <fieldset>
+      <fieldset>
           <label for="company">Agent's Company: </label>
-          <input id="company" type="text" name="company">
-      </fieldset> {% endcomment %}
-      {% comment %} <fieldset>
+          <input id="company" type="text" name="company" value="{{query.agent.company}}">
+      </fieldset> 
+      <fieldset>
           <label for="email">Agent's Email: </label>
-          <input id="email" type="text" name="email">
-      </fieldset> {% endcomment %}
+          <input id="email" type="text" name="email" value="{{query.agent.email}}">
+      </fieldset> 
       <fieldset>
           <label for="sent">Submission Date: </label>
-          <input id="sent" type="date" name="sent">
+          <input id="sent" type="date" name="sent" value="{{query.sent|date:"Y-m-d"}}">
       </fieldset>
+      
       <fieldset>
           <label for="expiration">Expiration: </label>
-          <input id="expiration" type="date" name="expiration">
+          <input id="expiration" type="date" name="expiration" value="{{query.expiration|date:"Y-m-d"}}">
         </fieldset>
         <fieldset>
           <label for="notes">Notes: </label>
-          <input id="notes" type="text" name="notes">
+          <input id="notes" type="text" name="notes" value="{{query.notes}}">
         </fieldset>
         <fieldset>
           <label for="status_id">Status: </label>
-          <input type="hidden" id="status_id" type="text" name="status_id" Value="{{"1"}}">
+          <input type="hidden" id="status_id" type="text" name="status_id" value="{{"1"}}">
       </fieldset>
       <fieldset>
           <label for="book_id">Book: </label>
-          <input id="book_id" type="text" name="book_id">
+          <input type="hidden" id="book_id" type="text" name="book_id">
         </fieldset>
 
-      <input type="submit" value="Add It" />
+      {% if query.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
     </form>
+    {% endblock %}
   </body>
 </html>
+
+      
