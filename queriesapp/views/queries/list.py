@@ -13,7 +13,7 @@ def query_list(request):
         if bookid is not None:
             all_queries = all_queries.filter(book_id=bookid)
         
-            all_tacos=Book.objects.filter(id=bookid)
+            all_tacos=Book.objects.filter(id=bookid)[0]
         # agent_name = request.GET.get('agent_name', None)
         
         # if agent_name is not None:

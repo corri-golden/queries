@@ -41,12 +41,12 @@
       </fieldset> 
       <fieldset>
           <label for="sent">Submission Date: </label>
-          <input id="sent" type="date" name="sent" value="{{query.sent}}">
+          <input id="sent" type="date" name="sent" value="{{query.sent|date:"Y-m-d"}}">
       </fieldset>
       
       <fieldset>
           <label for="expiration">Expiration: </label>
-          <input id="expiration" type="date" name="expiration" value="{{query.expiration}}">
+          <input id="expiration" type="date" name="expiration" value="{{query.expiration|date:"Y-m-d"}}">
         </fieldset>
         <fieldset>
           <label for="notes">Notes: </label>
