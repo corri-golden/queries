@@ -5,6 +5,7 @@ from django.contrib.auth import login, authenticate
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def register_user(request):
     """Handles creation of a new user for auth
         Args:
@@ -37,7 +38,7 @@ def register_user(request):
         # If authentication was successful, log the user in
         if authenticated_user is not None:
             login(request=request, user=authenticated_user)
-            return redirect(reverse('queriesapp:queries'))
+            return redirect(reverse('queriesapp:accounts'))
 
         else:
             # Bad login details were provided. We need to let them know they need to fix this.
@@ -56,7 +57,7 @@ def register_user(request):
         # login(request, new_user)
 
         # Redirect the browser to wherever you want to go after registering
-        return redirect(reverse('queriesapp:books'))
+        # return redirect(reverse('queriesapp:accounts'))
 
     # handles a request to load the empty form for the useer to fill out
     # else:

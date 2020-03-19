@@ -1,11 +1,13 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>New Query</title>
   </head>
   <body>
+    {% extends 'shared/base.html' %}
+
+    {% block content %}
     <h1>New Query</h1>
     
     <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
@@ -52,5 +54,6 @@
 
       <input type="submit" value="Add It" />
     </form>
+    {% endblock %}
   </body>
 </html>
