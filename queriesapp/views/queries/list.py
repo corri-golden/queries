@@ -1,27 +1,32 @@
 from django.shortcuts import render, render, reverse, redirect
-from queriesapp.models import Query
+from queriesapp.models import Query, Book
 from ..connection import Connection
+
 
 
 def query_list(request):
     if request.method == 'GET':
         all_queries = Query.objects.all()
-
+        all_tacos=Book.objects.all()
         bookid = request.GET.get('bookid', None)   
-
+        
         if bookid is not None:
             all_queries = all_queries.filter(book_id=bookid)
-
+        
+            all_tacos=Book.objects.filter(id=bookid)
         # agent_name = request.GET.get('agent_name', None)
         
         # if agent_name is not None:
         #     all_queries = all_queries.filter(query__contains=query)
 
+        
+        # taco is the variable that holds the book we got back from the filter
         template = 'queries/list.html'
         context = {
-            'all_queries': all_queries
+            'all_queries': all_queries,
+            'book': all_tacos
         }   
-
+        # book is a variable that holds the taco variable.  we are creating the book variable. then pass to context to the queries list template.  context is passed to the template. now have access book.  book.name
         return render(request, template, context)
 
     elif request.method == 'POST':

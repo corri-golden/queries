@@ -17,5 +17,5 @@ urlpatterns = [
     path('agents/<int:agent_id>/', agent_details, name='agent'),
     path('agents/<int:agent_id>/form/', agent_edit_form, name='agent_edit_form'),
     path('register/', register_user, name="register"),
-    # path('accounts/login', register_user, name="register"),
+    path('queries/<int:query_id>/form/', queries_edit_form, name='queries_edit_form'),
 ]

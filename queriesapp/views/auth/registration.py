@@ -25,8 +25,8 @@ def register_user(request):
             email=request.POST['email'],
             password=request.POST['password'],
             username=request.POST['username'],
-            # first_name=request.POST['first_name'],
-            # last_name=request.POST['last_name']
+            first_name=request.POST['first_name'],
+            last_name=request.POST['last_name']
         )
 
         authenticated_user = authenticate(
@@ -38,7 +38,7 @@ def register_user(request):
         # If authentication was successful, log the user in
         if authenticated_user is not None:
             login(request=request, user=authenticated_user)
-            return redirect(reverse('queriesapp:accounts'))
+            return redirect(reverse('queriesapp:queries'))
 
         else:
             # Bad login details were provided. We need to let them know they need to fix this.

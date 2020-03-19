@@ -9,11 +9,12 @@
   {% extends 'shared/base.html' %}
 
   {% block content %}
-    <h1>{{ query.agent.name }}</h1>
+    <h1>{{ query.agent.agent_name }}</h1>
+    <h1>{{ query.agent.company }}</h1>
     <h2> {{ query.agent.email }}</h2>
 
     <div>Sent:{{ query.sent }}</div>
-    <div>Expiration: {{ query.expiration }}</div>
+    <div>Expires: {{ query.expiration }}</div>
     <div>Notes: {{query.notes}}
   </body>
 </html>
@@ -21,5 +22,9 @@
     {% csrf_token %}
     <input type="hidden" name="actual_method" value="DELETE">
     <button>Delete</button>
+</form>
+<form action="{% url 'queriesapp:queries_edit_form' query.id %}" method="GET">
+    {% csrf_token %}
+    <button>Edit</button>
 </form>
 {% endblock %}

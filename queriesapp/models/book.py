@@ -12,7 +12,7 @@ class Book(models.Model):
         verbose_name_plural = ("books")
 
     def __str__(self):
-        return self.title
+        return self.book_name
 
     def get_absolute_url(self):
         return reverse("book_detail", kwargs={"pk": self.pk})
