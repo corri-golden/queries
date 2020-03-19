@@ -22,11 +22,19 @@
     {% endif %}
       {% csrf_token %}
       <label for="agent">Agent:</label>
-      <select id="agent_id" type="text" name="agent_id">
+      {% comment %} <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
                     <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
                 {% endfor %} 
-    </select>
+    </select> {% endcomment %}
+
+      <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
+                {% for agent in all_agents %}
+                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name }}</option>
+                {% endfor %} 
+      </select>
+
+
       {% comment %} <fieldset>
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">
