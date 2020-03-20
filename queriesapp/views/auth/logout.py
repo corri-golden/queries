@@ -1,7 +1,7 @@
 from django.urls import reverse
 from django.shortcuts import redirect
-# from django.contrib.auth import logout_user
+from django.contrib.auth import logout
 
 def logout_user(request):
     logout(request)
-    return redirect(reverse('queriesapp:home'))
+    return redirect(reverse('queriesapp:books'))
