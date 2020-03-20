@@ -1,4 +1,4 @@
-# queries
+# Queries
 
 QUERIES was developed for novelist who are looking for agents to publish their book.  The app allows the novelist to organize the queries (250 word description of the novel sent to agents). After creating a query card with the agent's information, the user can drag and drop the query between three columns pending, followup, and rejected so they will always know what the statuses of their queries in one page.
 
