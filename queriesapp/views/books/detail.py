@@ -9,8 +9,7 @@ from ..connection import Connection
 
 
 def get_book(book_id):
-
-    return Query.objects.get(pk=book_id)
+    return Book.objects.get(pk=book_id)
 
 
 # @login_required dd
