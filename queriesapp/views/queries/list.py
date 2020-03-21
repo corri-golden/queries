@@ -3,7 +3,7 @@ from queriesapp.models import Query, Book
 from ..connection import Connection
 
 
-#This gets all the plants that the logged in user has added.
+#This gets all the queries that the logged in user has added.
 # @login_required
 def query_list(request):
     if request.method == 'GET':
@@ -30,7 +30,7 @@ def query_list(request):
         context = {
             'all_queries': all_queries,
             'book': all_tacos,
-            'user_queries': user_queries
+            # 'user_queries': user_queries
         }   
         # book is a variable that holds the taco variable.  we are creating the book variable. then pass to context to the queries list template.  context is passed to the template. now have access book.  book.name
         return render(request, template, context)
@@ -51,7 +51,37 @@ def query_list(request):
         print(new_query.user.username)
         new_query.save()
 
+    # attempt at carrying the book id and using it
+    # elif request.method == 'POST':
+    #     form_data = request.POST
+
+    #     bookid = request.GET.get('bookid', NONE)
+    #     new_query = Query()
+
+    #     if bookid is not None:
+            
+    #         new_query = Query(
+    #         notes = form_data['notes'],
+    #         agent_id = form_data['agent_id'],
+    #         sent = form_data['sent'],
+    #         expiration = form_data['expiration'],
+    #         book_id = bookid,
+    #         status_id = form_data['status_id'],
+    #     )
+
+    #     print(new_query.user.username)
+    #     new_query.save()
+    #     return redirect(reverse('/queries?bookid={{bookid}}'))
+        # end attempt
+
+         
+
+
+
+
+
         return redirect(reverse('queriesapp:queries'))
+    
 
 
 

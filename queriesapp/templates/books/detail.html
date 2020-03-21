@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book</title>
+  </head>
+  <body>
+    {% extends 'shared/base.html' %}
+    
+    {% block content %}
+    <h1>Book</h2>
+    <h1>{{ book_name }}</h1>
+    <h2>By {{ book.num_of_pages }}</h2>
+    {% endblock %}
+  </body>
+</html>

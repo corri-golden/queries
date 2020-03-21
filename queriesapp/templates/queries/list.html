@@ -11,7 +11,7 @@
     
     <h1>Queries</h1>
     <h2>{{book}}</h2>
-    <a href="{% url 'queriesapp:queries_form' %}">Add Query</a>
+    <a href="/queries/form?bookid={{book.id}}">Add Query</a>
     
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     <div>

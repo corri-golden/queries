@@ -30,7 +30,7 @@
 
       <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
-                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name }}</option>
+                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name}} | {{agent.company}} | {{agent.email}}</option>
                 {% endfor %} 
       </select>
 
@@ -39,14 +39,14 @@
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">
       </fieldset> {% endcomment %}
-      <fieldset>
+      {% comment %} <fieldset>
           <label for="company">Agent's Company: </label>
           <input id="company" type="text" name="company" value="{{query.agent.company}}">
-      </fieldset> 
-      <fieldset>
+      </fieldset>  {% endcomment %}
+      {% comment %} <fieldset>
           <label for="email">Agent's Email: </label>
           <input id="email" type="text" name="email" value="{{query.agent.email}}">
-      </fieldset> 
+      </fieldset>  {% endcomment %}
       <fieldset>
           <label for="sent">Submission Date: </label>
           <input id="sent" type="date" name="sent" value="{{query.sent|date:"Y-m-d"}}">
@@ -66,7 +66,7 @@
       </fieldset>
       <fieldset>
           <label for="book_id">Book: </label>
-          <input type="hidden" id="book_id" type="text" name="book_id">
+          <input id="book_id" type="text" name="book_id" value"{{book_id}}">
         </fieldset>
 
       {% if query.id is not None %}

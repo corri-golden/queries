@@ -10,3 +10,4 @@ from .agents.details import agent_details
 from .agents.form import agent_edit_form
 from .auth.registration import register_user
 from .queries.form import queries_edit_form
+from .books.details import book_details
