@@ -65,9 +65,18 @@
           <input type="hidden" id="status_id" type="text" name="status_id" value="{{"1"}}">
       </fieldset>
       <fieldset>
+      <label for="book">Book:</label>
+      <select id="book_id" type="text" name="book_id" value"{{query.book_id}}">
+                {% for book in all_books %}
+                    <option {% if book.id == query.book_id %}selected{% endif %} value="{{ book.id }}">{{ book.book_name}}</option>
+                {% endfor %} 
+      </select>
+      </fieldset>
+
+      {% comment %} <fieldset>
           <label for="book_id">Book: </label>
           <input id="book_id" type="text" name="book_id" value"{{book_id}}">
-        </fieldset>
+        </fieldset> {% endcomment %}
 
       {% if query.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
