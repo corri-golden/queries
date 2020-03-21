@@ -12,8 +12,11 @@
 {% block content %}
     <h1>Books</h1>
 
-
+    {% if book.id is not None %}
+      <form action="{% url 'queriesapp:book' book.id %}" method="post">
+    {% else %}
     <form action="{% url 'queriesapp:books' %}" method="post">
+    {% endif %}
       {% csrf_token %}
       <fieldset>
           <label for="book_name">Book Title: </label>
@@ -31,6 +34,12 @@
                 {% endfor %}
           </select>
       </fieldset> {% endcomment %}
+      {% if book.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
 
       <input type="submit" value="Add It" />
     </form>
