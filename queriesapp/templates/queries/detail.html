@@ -9,6 +9,7 @@
   {% extends 'shared/base.html' %}
 
   {% block content %}
+  <a href="/queries/?bookid={{ query.book.id }}">Back</a>
     <h1>{{ query.agent.agent_name }}</h1>
     <h1>{{ query.agent.company }}</h1>
     <h2> {{ query.agent.email }}</h2>
@@ -27,4 +28,9 @@
     {% csrf_token %}
     <button>Edit</button>
 </form>
+{% comment %} <form action="{% url 'queriesapp:query'(query page for book) query.id %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="actual_method" value="DELETE">
+    <button>Delete</button>
+</form> {% endcomment %}
 {% endblock %}

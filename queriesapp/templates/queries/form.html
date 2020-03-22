@@ -14,10 +14,10 @@
     
     
     {% if query.id is not None %}
-      <h1>Edit Project</h1>
+      <h1>Edit Query</h1>
       <form action="{% url 'queriesapp:query' query.id %}" method="post">
     {% else %}
-    <h1>New Project</h1>
+    <h1>New Query</h1>
     <form action="{% url 'queriesapp:queries' %}" method="post">
     {% endif %}
       {% csrf_token %}

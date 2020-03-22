@@ -71,7 +71,7 @@ def query_list(request):
 
     #     print(new_query.user.username)
     #     new_query.save()
-    #     return redirect(reverse('/queries?bookid={{bookid}}'))
+        # return redirect(reverse('/queries?bookid={{bookid}}'))
         # end attempt
 
          

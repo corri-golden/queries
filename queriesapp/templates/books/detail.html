@@ -9,10 +9,10 @@
     {% extends 'shared/base.html' %}
     
     {% block content %}
+    <a href="/queries/?bookid={{ query.book.id }}">Back</a>
     <section>
-    <h1>Book</h2>
-    <h1>{{ book.book_name }}</h1>
-    <h2>By {{ book.num_of_pages }}</h2>
+    <h1>Book: {{ book.book_name }}</h1>
+    <h2>Number of Pages: {{ book.num_of_pages }}</h2>
     </section>
     <section id="book-actions" style="display:flex;">
       <form action="{% url 'queriesapp:book_edit_form' book.id %}" method="GET">

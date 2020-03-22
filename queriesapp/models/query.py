@@ -21,7 +21,8 @@ class Query(models.Model):
         verbose_name_plural = ("queries")
 
     def __str__(self):
-        return self.notes
+        return str(self.book.id)
+        
 
     def get_absolute_url(self):
         return reverse("query_detail", kwargs={"pk": self.pk})

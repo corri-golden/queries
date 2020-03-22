@@ -18,7 +18,9 @@ def query_details(request, query_id):
     if request.method == 'GET':
         query = get_query(query_id)
         template_name = 'queries/detail.html'
+        print("query: ", query)
         return render(request, template_name, {'query': query})
+
 
     elif request.method == 'POST':
         form_data = request.POST
@@ -48,7 +50,8 @@ def query_details(request, query_id):
         
         agent_to_update.save()
 
-        return redirect(reverse('queriesapp:queries'))
+        return redirect(reverse('queriesapp:queries', kwargs={'pk':query_to_update.id}))
+        # return redirect(reverse('queriesapp:queries'))
     
     if (
         "actual_method" in form_data
