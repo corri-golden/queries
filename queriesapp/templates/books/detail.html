@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Yo</title>
+  </head>
+  <body>
+    {% extends 'shared/base.html' %}
+    
+    {% block content %}
+    <a href="/queries/?bookid={{ query.book.id }}">Back</a>
+    <section>
+    <h1>Book: {{ book.book_name }}</h1>
+    <h2>Number of Pages: {{ book.num_of_pages }}</h2>
+    </section>
+    <section id="book-actions" style="display:flex;">
+      <form action="{% url 'queriesapp:book_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section>
+
+    {% endblock %}
+  </body>
+</html>

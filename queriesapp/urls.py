@@ -18,4 +18,6 @@ urlpatterns = [
     path('agents/<int:agent_id>/form/', agent_edit_form, name='agent_edit_form'),
     path('register/', register_user, name="register"),
     path('queries/<int:query_id>/form/', queries_edit_form, name='queries_edit_form'),
+    path('books/<int:book_id>/', book_details, name='book'),
+    path('books/<int:book_id>/form/', book_edit_form, name='book_edit_form'),
 ]

@@ -12,13 +12,16 @@
 {% block content %}
     <h1>Books</h1>
 
-
+    {% if book.id is not None %}
+      <form action="{% url 'queriesapp:book' book.id %}" method="post">
+    {% else %}
     <form action="{% url 'queriesapp:books' %}" method="post">
+    {% endif %}
       {% csrf_token %}
-      <fieldset>
+      {% comment %} <fieldset>
           <label for="book_name">Book Title: </label>
-          <input id="book_name" type="text" name="book_name">
-      </fieldset>
+          <input type="hidden" id="book_name" type="text" name="book_name">
+      </fieldset> {% endcomment %}
       <fieldset>
           <label for="num_of_pages">Number of Pages: </label>
           <input id="num_of_pages" type="text" name="num_of_pages">
@@ -31,6 +34,12 @@
                 {% endfor %}
           </select>
       </fieldset> {% endcomment %}
+      {% if book.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
 
       <input type="submit" value="Add It" />
     </form>

@@ -14,10 +14,10 @@
     
     
     {% if query.id is not None %}
-      <h1>Edit Project</h1>
+      <h1>Edit Query</h1>
       <form action="{% url 'queriesapp:query' query.id %}" method="post">
     {% else %}
-    <h1>New Project</h1>
+    <h1>New Query</h1>
     <form action="{% url 'queriesapp:queries' %}" method="post">
     {% endif %}
       {% csrf_token %}
@@ -30,7 +30,7 @@
 
       <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
-                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name }}</option>
+                    <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name}} | {{agent.company}} | {{agent.email}}</option>
                 {% endfor %} 
       </select>
 
@@ -39,14 +39,14 @@
           <label for="agent_id">Agent: </label>
           <input id="agent_id" type="text" name="agent_id">
       </fieldset> {% endcomment %}
-      <fieldset>
+      {% comment %} <fieldset>
           <label for="company">Agent's Company: </label>
           <input id="company" type="text" name="company" value="{{query.agent.company}}">
-      </fieldset> 
-      <fieldset>
+      </fieldset>  {% endcomment %}
+      {% comment %} <fieldset>
           <label for="email">Agent's Email: </label>
           <input id="email" type="text" name="email" value="{{query.agent.email}}">
-      </fieldset> 
+      </fieldset>  {% endcomment %}
       <fieldset>
           <label for="sent">Submission Date: </label>
           <input id="sent" type="date" name="sent" value="{{query.sent|date:"Y-m-d"}}">
@@ -65,9 +65,18 @@
           <input type="hidden" id="status_id" type="text" name="status_id" value="{{"1"}}">
       </fieldset>
       <fieldset>
+      <label for="book">Book:</label>
+      <select id="book_id" type="text" name="book_id" value"{{query.book_id}}">
+                {% for book in all_books %}
+                    <option {% if book.id == query.book_id %}selected{% endif %} value="{{ book.id }}">{{ book.book_name}}</option>
+                {% endfor %} 
+      </select>
+      </fieldset>
+
+      {% comment %} <fieldset>
           <label for="book_id">Book: </label>
-          <input type="hidden" id="book_id" type="text" name="book_id">
-        </fieldset>
+          <input id="book_id" type="text" name="book_id" value"{{book_id}}">
+        </fieldset> {% endcomment %}
 
       {% if query.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
