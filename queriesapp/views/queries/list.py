@@ -8,10 +8,10 @@ from ..connection import Connection
 def query_list(request):
     if request.method == 'GET':
         
-        current_user = request.user
-        user_queries = Query.objects.filter(user=current_user)
+        current_user = request.user.id
+        # user_queries = Query.objects.filter(user_id=current_user)
         
-        all_queries = Query.objects.all()
+        all_queries = Query.objects.filter(user_id=current_user).all()
         all_tacos=Book.objects.all()
         bookid = request.GET.get('bookid', None)   
         
@@ -19,6 +19,9 @@ def query_list(request):
             all_queries = all_queries.filter(book_id=bookid)
         
             all_tacos=Book.objects.filter(id=bookid)[0]
+        
+        
+        
         # agent_name = request.GET.get('agent_name', None)
         
         # if agent_name is not None:

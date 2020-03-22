@@ -6,7 +6,12 @@ from ..connection import Connection
 
 def book_list(request):
     if request.method == 'GET':
-        all_books = Book.objects.all()
+        current_user = request.user.id
+        # user_queries = Query.objects.filter(user_id=current_user)
+        
+        all_books = Book.objects.filter(user_id=current_user).all()
+
+        # all_books = Book.objects.all()
 
         template = 'books/list.html'
         context = {
