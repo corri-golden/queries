@@ -38,4 +38,4 @@ def agent_list(request):
         )
         
 
-        return redirect(reverse('queriesapp:queries'))
+        return redirect(reverse('queriesapp:queries_form'))

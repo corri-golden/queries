@@ -81,6 +81,7 @@ def query_list(request):
 
 
         return redirect(reverse('queriesapp:queries'))
+        
     
 
 
