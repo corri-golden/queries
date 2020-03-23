@@ -3,13 +3,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Book Yo</title>
+    <title>Book</title>
   </head>
   <body>
     {% extends 'shared/base.html' %}
     
     {% block content %}
-    <a href="/queries/?bookid={{ query.book.id }}">Back</a>
+    <a href="/queries/?bookid={{ book.id }}">Back</a>
     <section>
     <h1>Book: {{ book.book_name }}</h1>
     <h2>Number of Pages: {{ book.num_of_pages }}</h2>
