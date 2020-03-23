@@ -17,7 +17,7 @@ def book_details(request, book_id):
     if request.method == 'GET':
         book = get_book(book_id)
         template = 'books/detail.html'
-        print("book: ", book.id)
+        print("book:", book.id)
         return render(request, template, {'book': book})
 
     elif request.method == 'POST':

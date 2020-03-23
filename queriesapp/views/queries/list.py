@@ -51,7 +51,7 @@ def query_list(request):
             user_id = request.user.id
         )
         # and then save to the db
-        print(new_query.user.username)
+        print("new: ", new_query.book_id)
         new_query.save()
 
     # attempt at carrying the book id and using it

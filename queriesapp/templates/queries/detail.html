@@ -17,6 +17,8 @@
     <div>Sent:{{ query.sent }}</div>
     <div>Expires: {{ query.expiration }}</div>
     <div>Notes: {{query.notes}}
+    <div>Status: {{query.status}}
+    <div>Book: {{query.book}}
   </body>
 </html>
 <form action="{% url 'queriesapp:query' query.id %}" method="POST">
@@ -28,9 +30,5 @@
     {% csrf_token %}
     <button>Edit</button>
 </form>
-{% comment %} <form action="{% url 'queriesapp:query'(query page for book) query.id %}" method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="actual_method" value="DELETE">
-    <button>Delete</button>
-</form> {% endcomment %}
 {% endblock %}
+
