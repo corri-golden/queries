@@ -64,7 +64,8 @@
           <label for="status">Status:</label>
             <select id="status_id" type="text" name="status_id" value"{{query.status_id}}">
                 {% for status in all_statuses %}
-                    <option value="{{status.id}}">{{status.status_name}}</option>
+                    <option {% if status.id == query.status.id%}selected{% endif %} value="{{status.id}}">{{status.status_name}}</option>
+                    {% comment %} <option value="{{status.id}}">{{status.status_name}}</option> {% endcomment %}
                 {% endfor %} 
             </select>
 

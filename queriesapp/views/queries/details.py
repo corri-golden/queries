@@ -40,18 +40,23 @@ def query_details(request, query_id):
         query_to_update.expiration = form_data['expiration']
         query_to_update.notes = form_data['notes']
         query_to_update.agent_id = form_data['agent_id']
+        query_to_update.status_id = form_data['status_id']
+        query_to_update.book_id = form_data['book_id']
          # # Save the change to the db
         query_to_update.save()
 
         # # retrieve it first:
         agent_to_update = Agent.objects.get(pk=query_to_update.agent_id)
-        agent_to_update.email = form_data['email']
-        agent_to_update.company = form_data['company']
+        # agent_to_update.email = form_data['email']
+        # agent_to_update.company = form_data['company']
         
         agent_to_update.save()
 
-        return redirect(reverse('queriesapp:queries', kwargs={'pk':query_to_update.id}))
-        # return redirect(reverse('queriesapp:queries'))
+        # status_to_update = Status.objects.get(pk=status_to_update.status_id)
+        # status_to_update.status
+
+        # return redirect(reverse('queriesapp:queries', kwargs={'pk':query_to_update.id}))
+        return redirect(reverse('queriesapp:queries'))
     
     if (
         "actual_method" in form_data

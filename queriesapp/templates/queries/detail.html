@@ -17,6 +17,8 @@
     <div>Sent:{{ query.sent }}</div>
     <div>Expires: {{ query.expiration }}</div>
     <div>Notes: {{query.notes}}
+    <div>Status: {{query.status}}
+    <div>Book: {{query.book}}
   </body>
 </html>
 <form action="{% url 'queriesapp:query' query.id %}" method="POST">
