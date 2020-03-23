@@ -61,8 +61,17 @@
           <input id="notes" type="text" name="notes" value="{{query.notes}}">
         </fieldset>
         <fieldset>
-          <label for="status_id">Status: </label>
-          <input type="hidden" id="status_id" type="text" name="status_id" value="{{"1"}}">
+          <label for="status">Status:</label>
+            <select id="status_id" type="text" name="status_id" value"{{query.status_id}}">
+                {% for status in all_statuses %}
+                    <option value="{{status.id}}">{{status.status_name}}</option>
+                {% endfor %} 
+            </select>
+
+
+
+          {% comment %} <label for="status_id">Status: </label>
+          <input type="hidden" id="status_id" type="text" name="status_id" value="{{"1"}}"> {% endcomment %}
       </fieldset>
       <fieldset>
       <label for="book">Book:</label>

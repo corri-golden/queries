@@ -11,7 +11,7 @@ class Status(models.Model):
         verbose_name_plural = ("statuses")
 
     def __str__(self):
-        return self.name
+        return self.status_name
 
     def get_absolute_url(self):
         return reverse("status_detail", kwargs={"pk": self.pk})

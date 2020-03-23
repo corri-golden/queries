@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library</title>
+  </head>
+  <body>
+    <h1>Status</h1>
+
+    <ol>
+    {% for status in all_statuses %}
+        <li>
+            {{ status.status_name }}
+        </li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
