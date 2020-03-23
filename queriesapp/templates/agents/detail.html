@@ -8,7 +8,7 @@
   {% extends 'shared/base.html' %}
 
 {% block content %}
-    <a href="/queries/?bookid={{ book.id }}">Back</a>
+    {% comment %} <a href="/queries/?bookid={{ book.id }}">Back</a> {% endcomment %}
     <h1>{{ agent.agent_name }}</h1>
     <h2> {{ agent.company}}</h2>
     <h2> {{ agent.email}}</h2>

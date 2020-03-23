@@ -65,7 +65,8 @@
           {% endif %}
           {% endfor %}
 
-      <a href="{% url 'queriesapp:agents' %}">Agent List</a>
+      {% comment %} <a href="{% url 'queriesapp:agents' %}">Agent List</a> {% endcomment %}
+      <a href="/agents?bookid={{ book.id }}">Agent List</a>
     
     </div>
     {% endblock %}
