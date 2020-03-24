@@ -64,8 +64,10 @@ def query_details(request, query_id):
         ):
 
         query = Query.objects.get(pk=query_id)
+        book_id = query.book_id
         query.delete()
-
-        return redirect(reverse('queriesapp:queries'))
+        
+        # return redirect(reverse('queriesapp:queries'))
+        return redirect(f"/queries/?bookid={book_id}")
 
     

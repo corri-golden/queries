@@ -9,12 +9,13 @@
   {% extends 'shared/base.html' %}
 
     {% block content %}
+    <a href="/queries/?bookid={{ book_id }}">Back</a>
     <h1>Agents</h1>
-
+    
     <ol>
     {% for agent in all_agents %}
         <li>
-            <a href="{% url 'queriesapp:agent' agent.id %}">{{agent.agent_name }}"</a>
+            <a href="{% url 'queriesapp:agent' agent.id %}">{{agent.agent_name }}</a>
             </br>
             {{agent.company}}
             </br>

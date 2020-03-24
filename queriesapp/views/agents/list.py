@@ -7,10 +7,11 @@ from ..connection import Connection
 def agent_list(request):
     if request.method == 'GET':
         all_agents = Agent.objects.all()
-
+        bookid = request.GET.get('bookid', None)   
         template = 'agents/list.html'
         context = {
-            'all_agents': all_agents
+            'all_agents': all_agents,
+            'book_id': bookid
         }   
 
         return render(request, template, context)
