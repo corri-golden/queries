@@ -12,7 +12,7 @@ def get_book(book_id):
     return Book.objects.get(pk=book_id)
 
 
-# @login_required dd
+@login_required 
 def book_details(request, book_id):
     if request.method == 'GET':
         book = get_book(book_id)

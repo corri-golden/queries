@@ -1,9 +1,10 @@
 from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Agent
 from ..connection import Connection
+from django.contrib.auth.decorators import login_required
 
 
-
+login_required
 def agent_list(request):
     if request.method == 'GET':
         all_agents = Agent.objects.all()

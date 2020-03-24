@@ -5,6 +5,7 @@ from queriesapp.models import Agent
 from ..connection import Connection
 from queriesapp.models import Agent
 from .details import get_agent
+from django.contrib.auth.decorators import login_required
 
 
 def get_agents():
@@ -14,7 +15,7 @@ def get_agents():
 
 
 
-# @login_required
+@login_required
 def agents_form(request):
     if request.method == 'GET':
         template = 'agents/form.html'
@@ -24,7 +25,7 @@ def agents_form(request):
 
         return render(request, template)
 
-# @login_required
+@login_required
 def agent_edit_form(request, agent_id):
 
     if request.method == 'GET':
