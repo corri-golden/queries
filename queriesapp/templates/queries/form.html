@@ -18,7 +18,7 @@
       <form action="{% url 'queriesapp:query' query.id %}" method="post">
     {% else %}
     <h1>New Query</h1>
-    <form action="{% url 'queriesapp:queries' %}" method="post">
+      <form action="{% url 'queriesapp:queries' %}" method="post">
     {% endif %}
       {% csrf_token %}
       <label for="agent">Agent:</label>
@@ -53,7 +53,7 @@
       </fieldset>
       
       <fieldset>
-          <label for="expiration">Expiration: </label>
+          <label for="expiration">Deadline to Respond: </label>
           <input id="expiration" type="date" name="expiration" value="{{query.expiration|date:"Y-m-d"}}">
         </fieldset>
         <fieldset>
