@@ -14,7 +14,7 @@ def get_books():
 
 
 
-# @login_required
+@login_required
 def book_form(request):
     if request.method == 'GET':
         template = 'books/form.html'
@@ -25,7 +25,7 @@ def book_form(request):
 
         return render(request, template)
 
-# @login_required
+@login_required
 def book_edit_form(request, book_id):
 
     if request.method == 'GET':
