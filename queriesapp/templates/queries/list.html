@@ -1,11 +1,9 @@
+{% extends 'shared/base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-  {% extends 'shared/base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/queries.css' %}" />
+{% endblock %}
 
 {% block content %}  
     
@@ -19,7 +17,7 @@
     
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     <div>
-    <h2>Pending</h2>
+    <h2 class="queries">Pending</h2>
     {% for query in all_queries %}
       {% if query.status.id == 1 %}
           <div>
@@ -67,7 +65,7 @@
 
       {% comment %} <a href="{% url 'queriesapp:agents' %}">Agent List</a> {% endcomment %}
       <a href="/agents?bookid={{ book.id }}">Agent List</a>
-    
+
     </div>
     {% endblock %}
   </body>
