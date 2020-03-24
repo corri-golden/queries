@@ -29,8 +29,8 @@ body {
 }
 
 a {
-    color: black !important;
-    /* text-shadow: 1px 1px; */
+    color: tan !important;
+    text-shadow: 1px 1px black;
     text-decoration: none;
 }
 
