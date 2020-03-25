@@ -4,10 +4,15 @@ from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
 
-login_required
+
 def agent_list(request):
     if request.method == 'GET':
-        all_agents = Agent.objects.all()
+        current_user = request.user.id
+
+        all_agents = Agent.objects.filter(user_id=current_user).all()
+
+    
+        
         bookid = request.GET.get('bookid', None)   
         template = 'agents/list.html'
         context = {
@@ -36,7 +41,7 @@ def agent_list(request):
             agent_name = form_data['agent_name'],
             company = form_data['company'],
             email = form_data['email'],
-            # user_id = request.user.id
+            user_id = request.user.id
         )
         
 

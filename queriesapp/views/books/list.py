@@ -22,7 +22,7 @@ def book_list(request):
         return render(request, template, context)
 
 
-# @login_required
+
     elif request.method == 'POST':
         form_data = request.POST
         #instantiate
@@ -36,22 +36,11 @@ def book_list(request):
         # print(new_agent.user.username)
         # new_agent.save()
 
-        
-        # try:
-        #     new_book = Book.objects.create(
-        #         book_name = form_data['book_name'],
-        #         num_of_pages = form_data['num_of_pages'],
-        #         user_id = request.user.id
-        #     )
-        #     # x = int(form_data['num_of_pages'])
-
-        #     # if not type(x) is int:
-        #     #     window.alert("Put Int") 
-        # except ValueError: 
-        #     return alert("Are you sure you want to delete this")
-                
-            
-        
-        
+        new_book = Book.objects.create(
+            book_name = form_data['book_name'],
+            num_of_pages = form_data['num_of_pages'],
+            user_id = request.user.id
+        )
+                        
 
         return redirect(reverse('queriesapp:books'))
