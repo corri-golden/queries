@@ -1,0 +1,36 @@
+@font-face{
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
+}
+
+
+.login {
+    text-align: center; 
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+    color: black;
+    /* text-shadow: 1px 1px black; */
+    font-size: 100px;
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    font-weight: bolder;
+    margin-top: 75px;
+}
+
+h2 {
+    color: black;
+    /* text-shadow: 1px 1px black; */
+    font-size: 30px;
+}
+
+body{
+    background-color: rgb(191,190, 188);
+}
+
+button {
+    background: tan;
+    margin-top: 7px;
+    font-family: 'Roboto Mono', monospace;
+}
+

@@ -1,9 +1,10 @@
 from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Book
 from ..connection import Connection
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def book_list(request):
     if request.method == 'GET':
         current_user = request.user.id

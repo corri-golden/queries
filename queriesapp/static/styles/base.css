@@ -7,7 +7,7 @@ body {
 
 .main-content {
     padding: 1em 2em;
-    /* background-color: blue; */
+    background-color: rgb(191,190, 188);
 }
 
 .navList {
@@ -24,14 +24,20 @@ body {
 }
 
 #site-nav {
-    border-bottom: solid .5px black;
-    background-color: white;
+    /* border-bottom: solid .5px black; */
+    background-color: rgb(191,190, 188);
+    
 }
 
 a {
-    color: tan !important;
+    color: ivory;
     text-shadow: 1px 1px black;
     text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    background-color: rgb(191,190, 188);
 }
 
 

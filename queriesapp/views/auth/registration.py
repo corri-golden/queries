@@ -38,7 +38,7 @@ def register_user(request):
         # If authentication was successful, log the user in
         if authenticated_user is not None:
             login(request=request, user=authenticated_user)
-            return redirect(reverse('queriesapp:queries'))
+            return redirect(reverse('queriesapp:books'))
 
         else:
             # Bad login details were provided. We need to let them know they need to fix this.
