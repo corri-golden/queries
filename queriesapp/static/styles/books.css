@@ -15,8 +15,9 @@
     margin-top: 75px;
 }
 
-a {
+a .icon {
     font-family: 'Roboto Mono', monospace;
+    color: tan;
     
 }
 
@@ -40,15 +41,15 @@ a {
 
 /* .book_card {background-color: white;
 box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-/* color: white; */
-/* text-align: center !important;
+color: white;
+text-align: center !important;
 height: 150px;
-width: 250px; */
-/* } */
+width: 250px;
+} */
 
 .book_card{
     text-align: center;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-bottom: solid 5px tan; 
 }
 
 .fas fa-plus-circle{

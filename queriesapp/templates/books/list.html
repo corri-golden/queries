@@ -10,27 +10,29 @@
     
     <div>
     <h1 class="book_logo">B o o k s</h1>
-    {% comment %} <div class="book_card"> {% endcomment %}
+    <div class="book_card">
         {% comment %} <h3 class="book_title">Books</h3> {% endcomment %}
-    {% comment %} <div class="book_list"> {% endcomment %}
-    {% comment %} {% for book in all_books %}
+    <div class="book_list">
+    {% for book in all_books %}
     <a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></br>
-    {% endfor %} {% endcomment %}
+    {% endfor %} 
     
     {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
     
-    <div class="book_drop">
+    {% comment %} <div class="book_drop">
           {% comment %} <label for="Books">Status:</label> {% endcomment %}
-            <select id="book_id" type="text" name="book_id" value"{{book.id}}">
-                {% for book in all_books %}
+            {% comment %} <select id="book_id" type="text" name="book_id" value"{{book.id}}"> {% endcomment %}
+                {% comment %} {% for book in all_books %}
                     <option value="" disabled selected>Select a Book</option>
                     <option value="{{ book.id }}">{{ book.book_name }}</option>
                 {% endfor %} 
             </select>
+    </div>  {% endcomment %}
+    
+    </div>
     </div>
     <div class="icon">
     <a href="{% url 'queriesapp:book_form' %}"><i class="fas fa-plus-circle"></i></a>
-    </div>
     </div>
 
 {% endblock %}
