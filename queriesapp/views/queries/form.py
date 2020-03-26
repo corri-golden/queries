@@ -27,7 +27,7 @@ def get_books():
 
 
 
-# @login_required
+@login_required
 def queries_form(request):
     if request.method == 'GET':
         agents = get_agents()
@@ -42,7 +42,7 @@ def queries_form(request):
 
     return render(request, template, context)
 
-# @login_required
+@login_required
 def queries_edit_form(request, query_id):
 
     if request.method == 'GET':

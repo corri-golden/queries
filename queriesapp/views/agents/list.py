@@ -1,12 +1,18 @@
 from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Agent
 from ..connection import Connection
+from django.contrib.auth.decorators import login_required
 
 
 
 def agent_list(request):
     if request.method == 'GET':
-        all_agents = Agent.objects.all()
+        current_user = request.user.id
+
+        all_agents = Agent.objects.filter(user_id=current_user).all()
+
+    
+        
         bookid = request.GET.get('bookid', None)   
         template = 'agents/list.html'
         context = {

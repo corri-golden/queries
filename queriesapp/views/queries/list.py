@@ -1,10 +1,11 @@
 from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Query, Book
 from ..connection import Connection
+from django.contrib.auth.decorators import login_required
 
 
 #This gets all the queries that the logged in user has added.
-# @login_required
+@login_required
 def query_list(request):
     if request.method == 'GET':
         

@@ -13,7 +13,7 @@ def get_agent(agent_id):
 
     return Agent.objects.get(pk=agent_id)
 
-# @login_required dd
+@login_required 
 def query_details(request, query_id):
     if request.method == 'GET':
         query = get_query(query_id)

@@ -4,6 +4,8 @@ from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
 
+
+
 @login_required
 def book_list(request):
     if request.method == 'GET':
@@ -41,6 +43,6 @@ def book_list(request):
             num_of_pages = form_data['num_of_pages'],
             user_id = request.user.id
         )
-        
+                        
 
         return redirect(reverse('queriesapp:books'))

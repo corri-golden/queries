@@ -1,6 +1,6 @@
 from django.urls import reverse
 from django.shortcuts import render, redirect
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from queriesapp.models import Agent
 from ..connection import Connection
 
@@ -8,7 +8,7 @@ def get_agent(agent_id):
 
     return Agent.objects.get(pk=agent_id)
 
-# @login_required dd
+@login_required
 def agent_details(request, agent_id):
     if request.method == 'GET':
         agent = get_agent(agent_id)

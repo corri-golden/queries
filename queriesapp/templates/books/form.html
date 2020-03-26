@@ -9,27 +9,45 @@
 
 {% block content %}
     
-    <h1 class="book_title">Add A Book</h1>
+    
     
     <div class="book_div">
     {% if book.id is not None %}
       <h1>Edit: {{book}}</h1>
       <form action="{% url 'queriesapp:book' book.id %}" method="post">
     {% else %}
+      <h1 class="book_title">Add A Book</h1>
     <form action="{% url 'queriesapp:books' %}" method="post">
     {% endif %}
       {% csrf_token %}
     <form>
         {% comment %} <div> {% endcomment %}
           {% comment %} <label for="book_name">Book:</label> {% endcomment %}
-          <input class="form-group col-md-3" id="book_name" type="text" placeholder="Book Title" name="book_name"></br>
+          <input class="form-group col-md-3" id="book_name" type="text" placeholder="Book Title" name="book_name" value="{{book.book_name}}"></br>
         {% comment %} </div>
         <div> {% endcomment %}
           {% comment %} <label for="num_of_pages">Number of Pages: </label> {% endcomment %}
-          <input class="form-group col-md-3" placeholder="Number of Pages" min="90" id="num_of_pages" type="number" name="num_of_pages"></br>
+          <input class="form-group col-md-3" placeholder="Number of Pages" min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
         
    
-    {% if book.id is not None %}
+    {% comment %} {% if book.id is not None %}
+      <fieldset>
+          <label for="book_name">Book</label>
+          <input id="book_name" type="text" name="book_name" value="{{book.book_name}}">
+      </fieldset> 
+      <fieldset>
+          <label for="num_of_pages">Number of Pages: </label>
+          <input id="num_of_pages" min="90" type="number" name="num_of_pages" value="{{book.num_of_pages}}">
+      </fieldset> {% endcomment %}
+      {% comment %} <fieldset>
+          <label for="location">Library: </label>
+          <select id="location" type="text" name="location">
+                {% for library in all_libraries %}
+                    <option value="{{ library.id }}">{{ library.title }}</option>
+                {% endfor %}
+          </select>
+      </fieldset> {% endcomment %}
+      {% if book.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
             <input class="button" type="submit" value="Update" />
         {% else %}
