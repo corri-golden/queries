@@ -1,26 +1,42 @@
 
-<html>
-
-
-<head>
-    <meta charset="utf-8">
-    <title>Queries/title>
-</head>
-
-<body>
 {% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-
-    <h1>Books</h1>
+    
+    
     <div>
+    <h1 class="book_logo">B o o k s</h1>
+    <div class="book_card">
+        {% comment %} <h3 class="book_title">Books</h3> {% endcomment %}
+    <div class="book_list">
+    <ul class="list-group list-group-flush">
     {% for book in all_books %}
-    {% comment %} <a href="{% url 'queriesapp:queries?bookid=bookid' book.id %}"> {{book.book_name}}<a> {% endcomment %}
-    <a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a>
-    {% endfor %}
-    </div>
+        <li="list-group-item"><a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
+    {% endfor %} 
+    
     {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
-    <a href="{% url 'queriesapp:book_form' %}">Add Book</a>
+    
+    {% comment %} <div class="book_drop">
+          {% comment %} <label for="Books">Status:</label> {% endcomment %}
+            {% comment %} <select id="book_id" type="text" name="book_id" value"{{book.id}}"> {% endcomment %}
+                {% comment %} {% for book in all_books %}
+                    <option value="" disabled selected>Select a Book</option>
+                    <option value="{{ book.id }}">{{ book.book_name }}</option>
+                {% endfor %} 
+            </select>
+    </div>  {% endcomment %}
+    
+    </ul>
+    </div>
+    <div class="icon">
+    <a href="{% url 'queriesapp:book_form' %}"><i class="fas fa-plus-circle"></i></a>
+    </div>
 
 {% endblock %}
 </body>

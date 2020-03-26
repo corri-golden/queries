@@ -1,13 +1,26 @@
-<h2>Register</h2>
-<form method="post">
-    {% csrf_token %}
-<!--     These values will be saved as part of a new User instance -->
-    <input type="text" placeholder="username" name="username">
-    <input type="text" placeholder="password" name="password">
-    <input type="email" placeholder="email" name="email">
-    <input type="text" placeholder="first name" name="first_name">
-    <input type="text" placeholder="last name" name="last_name">
+{% load static %}
 
-  
-    <button type="submit">Login</button>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div class="reg">
+    <form method="post">
+        {% csrf_token %}
+    <form class="reg_form">
+    <h1>Queries</h1>
+    <h3>New Here? Create A Free Account</h3>
+    <input class="reg_input" type="text" placeholder="Username" name="username"></br>
+    <input class="reg_input" type="text" placeholder="Password" name="password"></br>
+    <input class="reg_input" type="email" placeholder="Email" name="email"></br>
+    <input class="reg_input" type="text" placeholder="First Name" name="first_name"></br>
+    <input class="reg_input" type="text" placeholder="Last Name" name="last_name"></br>
+    <button class="submit" type="submit">Sign Up</button>
+    </form>
 </form>
+</div>
+
+{% endblock %}

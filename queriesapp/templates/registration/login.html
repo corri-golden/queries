@@ -1,6 +1,19 @@
-<h2>Login</h2>
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="login">
+<h1>Queries</h1>
+
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button type="submit">Sign In</button>
 </form>
+</div>
+{% endblock %}

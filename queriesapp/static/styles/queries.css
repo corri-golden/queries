@@ -1,0 +1,57 @@
+@font-face{
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
+
+}
+
+.title{
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    text-align: center;
+    font-size: 75px;
+    
+}
+
+/* query_item{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    
+/* } */
+
+
+
+.query-container{
+  display: flex;
+  /* justify-content: center;   */
+}
+
+/* .flex_item{
+    display: flex;
+} */
+
+/* .queries { */
+    /* list-style: none;
+    display: flex; */
+    /* color: blue; */
+    /* border: black  */
+    /* flex-wrap: wrap;
+    justify-content: space-evenly; */
+/* } */
+
+/* .book {
+    flex-basis: 20%;
+    padding: 0 2em 0.5em 2em;
+    border: 1px solid gray;
+    margin: 1em;
+    padding: 1.5em;
+}
+
+.book__title {
+    font-size: 1.1em;
+}
+
+.book__description {
+    font-size: 0.75em;
+} */

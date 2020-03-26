@@ -2,7 +2,9 @@ from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Book
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
+
+
+
 
 @login_required
 def book_list(request):

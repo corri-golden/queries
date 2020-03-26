@@ -9,12 +9,13 @@
   {% extends 'shared/base.html' %}
 
 {% block content %}
-    <h1>New Agent</h1>
+
 
     {% if agent.id is not None %}
+      <h1>Edit Agent</h1>
         <form action="{% url 'queriesapp:agent' agent.id %}" method="post">
     {% else %}
-
+      <h1>New Agent</h1>
     <form action="{% url 'queriesapp:agents' %}" method="post">
     {% endif %}
     {% csrf_token %}
