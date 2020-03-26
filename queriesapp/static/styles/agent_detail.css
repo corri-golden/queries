@@ -1,0 +1,52 @@
+@font-face{
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
+
+}
+
+.title {
+    text-align: center;
+    font-size: 75px;
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    margin-top: 65px;
+}
+
+button{
+    background-color: tan;
+    width: 125px;
+    text-align: center;
+}
+
+.detail{
+    align-item: center;
+    text-align: center;
+}
+
+.card.w-50{
+    align-items: center;
+    text-align: center;
+    
+}
+
+.all{
+    align-items: center;
+    text-align: center;  
+}
+
+.card{
+    align-items: center;
+    text-align: center;
+    margin-left: 350px;
+    margin-right: 350px;
+    opacity: 200px;
+    border: tan solid;
+    margin-top: 50px;
+    font-family: 'Roboto Mono', monospace;
+   
+}
+
+.back{
+    margin-top: 20px
+}
+
+
