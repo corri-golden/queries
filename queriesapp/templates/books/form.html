@@ -13,21 +13,22 @@
     
     <div class="book_div">
     {% if book.id is not None %}
-      <h1>Edit: {{book}}</h1>
+      <h1 class="book_title">Edit Book</h1>
       <form action="{% url 'queriesapp:book' book.id %}" method="post">
     {% else %}
       <h1 class="book_title">Add A Book</h1>
     <form action="{% url 'queriesapp:books' %}" method="post">
     {% endif %}
       {% csrf_token %}
-    <form>
+    <div class="card">
+      <div class="card-body">
         {% comment %} <div> {% endcomment %}
           {% comment %} <label for="book_name">Book:</label> {% endcomment %}
-          <input class="form-group col-md-3" id="book_name" type="text" placeholder="Book Title" name="book_name" value="{{book.book_name}}"></br>
+          <input  id="book_name" type="text" placeholder="Book Title" name="book_name" value="{{book.book_name}}"></br>
         {% comment %} </div>
         <div> {% endcomment %}
           {% comment %} <label for="num_of_pages">Number of Pages: </label> {% endcomment %}
-          <input class="form-group col-md-3" placeholder="Number of Pages" min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
+          <input placeholder="Number of Pages" min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
         
    
     {% comment %} {% if book.id is not None %}
@@ -55,7 +56,8 @@
         {% endif %}
         {% comment %} </div> {% endcomment %}
          </form>
-         
+         </div>
+        </div> 
       </div>
     {% endblock %}
   </body>

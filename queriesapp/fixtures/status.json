@@ -1,0 +1,25 @@
+[
+    {
+        "model": "queriesapp.Status",
+        "pk" : 1,
+        "fields": {
+            "status_name": "Pending"
+        } 
+    },
+
+    {
+        "model": "queriesapp.Status",
+        "pk" : 2,
+        "fields": {
+            "status_name": "Follow Up"
+        }
+    },
+
+    {
+        "model": "queriesapp.Status",
+        "pk" : 3,
+        "fields": {
+            "status_name": "Rejected"
+        }
+    }
+]

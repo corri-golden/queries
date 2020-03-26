@@ -1,44 +1,39 @@
-<!DOCTYPE html>
-<html>
+{% extends 'shared/base.html' %}
+{% load static %}
 
-  <head>
-    <meta charset="utf-8">
-    <title>New Agent</title>
-  </head>
-  <body>
-  {% extends 'shared/base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/agent_form.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 
 
     {% if agent.id is not None %}
-      <h1>Edit Agent</h1>
+      <h1 class="book_title">Edit Agent</h1>
         <form action="{% url 'queriesapp:agent' agent.id %}" method="post">
     {% else %}
-      <h1>New Agent</h1>
+      <h1 class="book_title">New Agent</h1>
     <form action="{% url 'queriesapp:agents' %}" method="post">
     {% endif %}
     {% csrf_token %}
-        <fieldset>
-          <label for="agent_name">Agent's Name: </label>
-          <input id="agent_name" type="text" name="agent_name" value="{{ agent.agent_name }}">
-        </fieldset>
-        <fieldset>
-          <label for="company">Agent's Company: </label>
-          <input id="company" type="text" name="company" value="{{ agent.company }}">
-        </fieldset>
-        <fieldset>
-          <label for="email">Agent's Email: </label>
-          <input id="email" type="text" name="email" value="{{ agent.email }}">
-        </fieldset>
+      <div class="card">
+        <div class="card-body">
+          <input placeholder="Agent's Name" id="agent_name" type="text" name="agent_name" value="{{ agent.agent_name }}">
+          <input placeholder="Agent's Company" id="company" type="text" name="company" value="{{ agent.company }}">
+          <input placeholder="Agent's Email" id="email" type="text" name="email" value="{{ agent.email }}">
+        
         {% comment %} <input type="submit" value="Add It" /> {% endcomment %}
 
     {% if agent.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
-            <input type="submit" value="Update" />
+            <input class="button" type="submit" value="Update" />
         {% else %}
-            <input type="submit" value="Create" />
+            <input class="button" type="submit" value="Create" />
         {% endif %}
+        </div>
+        </div>
 
     </form>
     {% endblock %}
