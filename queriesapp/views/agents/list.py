@@ -35,7 +35,7 @@ def agent_list(request):
             agent_name = form_data['agent_name'],
             company = form_data['company'],
             email = form_data['email'],
-            # user_id = request.user.id
+            user_id = request.user.id
         )
         
 

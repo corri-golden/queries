@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html>
+{% extends 'shared/base.html' %}
+{% load static %}
 
-  <head>
-    <meta charset="utf-8">
-    <title>Agents</title>
-  </head>
-  <body>
-  {% extends 'shared/base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/agents.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
 
-    {% block content %}
+{% block content %}
+
     <a href="/queries/?bookid={{ book_id }}">Back</a>
-    <h1>Agents</h1>
+    <h1 class="title">Agents</h1>
     
-    <ol>
+    
+    
+    
+    
+    
+    <div>
+    <ul>
     {% for agent in all_agents %}
-        <li>
-            <a href="{% url 'queriesapp:agent' agent.id %}">{{agent.agent_name }}</a>
+        <li class="agent_div">
+            {{agent.agent_name }}
             </br>
             {{agent.company}}
             </br>
             {{agent.email}}
+            </br>
+          <button><a href="{% url 'queriesapp:agent' agent.id %}" >Details</a></button>
         </li>
     {% endfor %}
-    </ol>
+    </ul>
+    </div>
     {% endblock %}
   </body>
 </html>
