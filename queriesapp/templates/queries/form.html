@@ -18,7 +18,7 @@
       <form action="{% url 'queriesapp:query' query.id %}" method="post">
     {% else %}
     <h1 class="book_title">New Query</h1>
-      <a href="{% url 'queriesapp:agents_form' %}">Add Agent</a>
+      {% comment %} <h3 class="add_agent"<a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></h3> {% endcomment %}
       <form action="{% url 'queriesapp:queries' %}" method="post">
     {% endif %}
       {% csrf_token %}
@@ -31,14 +31,16 @@
     
     <div class="card">
       <div class="card-body">
+      <h6 class="button_agent"<a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></h6>
       <fieldset>
-      <label for="agent">Agent:</label>
+      <label for="agent"></label>
         <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
                     <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name}} | {{agent.company}} | {{agent.email}}</option>
                 {% endfor %} 
         </select>
       </fieldset>
+    
 
 
       {% comment %} <fieldset>

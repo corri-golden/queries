@@ -1,34 +1,40 @@
+{% extends 'shared/base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Library</title>
-  </head>
-  <body>
-  {% extends 'shared/base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/query_detail.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
 
-  {% block content %}
+{% block content %}
+
+   
   <a href="/queries/?bookid={{ query.book.id }}">Back</a>
-    <h1>{{ query.agent.agent_name }}</h1>
-    <h1>{{ query.agent.company }}</h1>
-    <h2> {{ query.agent.email }}</h2>
+  <h1 class="title">Query Details</h2>
+    <div class="card">
+      <div class="card-body"> 
+        <h5>{{ query.agent.agent_name }}</h5>
+        <h5>{{ query.agent.company }}</h5>
+        <h5> {{ query.agent.email }}</h5>
 
-    <div>Sent:{{ query.sent }}</div>
-    <div>Deadline to Respond: {{ query.expiration }}</div>
-    <div>Notes: {{query.notes}}
-    <div>Status: {{query.status}}
-    <div>Book: {{query.book}}
-  </body>
-</html>
-<form action="{% url 'queriesapp:query' query.id %}" method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="actual_method" value="DELETE">
-    <button>Delete</button>
-</form>
-<form action="{% url 'queriesapp:queries_edit_form' query.id %}" method="GET">
+      <h5>Sent:{{ query.sent }}</h5>
+    <h5>Deadline to Respond: {{ query.expiration }}</h5>
+    <h5>Notes: {{query.notes}}</h5>
+    <h5>Status: {{query.status}}</h5>
+    <h5>Book: {{query.book}}</h5>
+    </div>
+    </div>
+  <form action="{% url 'queriesapp:query' query.id %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="actual_method" value="DELETE">
+      <button>Delete</button>
+  </form>
+  <form action="{% url 'queriesapp:queries_edit_form' query.id %}" method="GET">
     {% csrf_token %}
     <button>Edit</button>
-</form>
+  </form>
 {% endblock %}
+</body>
+</html>
 
