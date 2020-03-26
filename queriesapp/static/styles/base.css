@@ -14,7 +14,7 @@ body {
     list-style-type: none;
     display: flex;
     text-shadow: black;
-    font-color: white;
+    font-color: ivory !important;
     padding: 1em;
     margin: 0;
 }
@@ -30,14 +30,14 @@ body {
 }
 
 a {
-    color: ivory;
+    color: ivory !important;
     text-shadow: 1px 1px black;
     text-decoration: none;
     font-family: 'Roboto Mono', monospace;
 }
 
 body{
-    background-color: rgb(191,190, 188);
+    background-color: rgb(191,190, 188) !important;
 }
 
 

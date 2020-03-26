@@ -13,8 +13,9 @@
     <div class="book_card">
         {% comment %} <h3 class="book_title">Books</h3> {% endcomment %}
     <div class="book_list">
+    <ul class="list-group list-group-flush">
     {% for book in all_books %}
-    <a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></br>
+        <li="list-group-item"><a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
     {% endfor %} 
     
     {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
@@ -29,7 +30,7 @@
             </select>
     </div>  {% endcomment %}
     
-    </div>
+    </ul>
     </div>
     <div class="icon">
     <a href="{% url 'queriesapp:book_form' %}"><i class="fas fa-plus-circle"></i></a>

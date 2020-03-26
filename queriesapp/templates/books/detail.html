@@ -1,16 +1,33 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Book</title>
-  </head>
-  <body>
-    {% extends 'shared/base.html' %}
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/book_detail.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="back">
+    <a href="/queries/?bookid={{ book.id }}"> Queries</a>
+    </div>
     
-    {% block content %}
-    <a href="/queries/?bookid={{ book.id }}">Back</a>
-    <section>
+    <h1 class="title">Book Details</h2>
+    
+    <div class="card">
+      <div class="card-body">
+        <h5>Book: {{ book.book_name }}</h5>
+        <p class="card-text">Number of Pages: {{ book.num_of_pages }}</p>
+        <form action="{% url 'queriesapp:book_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+      </div>
+    </div>
+
+
+    {% comment %} <section>
     <h1>Book: {{ book.book_name }}</h1>
     <h2>Number of Pages: {{ book.num_of_pages }}</h2>
     </section>
@@ -19,7 +36,7 @@
             {% csrf_token %}
             <button>Edit</button>
         </form>
-    </section>
+    </section> {% endcomment %}
 
     {% endblock %}
   </body>
