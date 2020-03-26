@@ -15,10 +15,11 @@
 .card{
     align-items: center;
     text-align: left;
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
     opacity: 200px;
     border: tan solid;
+    /* box-shadow: 4px 4px gray; */
     margin-top: 50px;
     font-family: 'Roboto Mono', monospace;
    
@@ -28,23 +29,33 @@
     background-color: tan;
     text-align: center;
     margin-top: 10px;
-    align-items: center !important;
+    align-items: center;
 }
 
 .book_div{
     text-align: center;
     align-items: center;
 }
-.all{
-    align-items: center;
-    text-align: center;
-}
+
 input{
     margin-top: 5px;
     width: 250px;
     align-items: center !important;
     
 }
+
+.button_agent{
+    text-align: center;
+    background-color: tan;
+    width: 100px;
+    
+}
+
+.add_agent{
+    align-items: center;
+    text-align: left;
+}
+
 
 .form-group col-md-6{
     align-items: center;
