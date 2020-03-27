@@ -10,12 +10,15 @@
 {% block content %}
     
     
-    <div>
+    
     <h1 class="book_logo">B o o k s</h1>
-    <div class="book_card">
+    {% comment %} <div class="book_card">
         {% comment %} <h3 class="book_title">Books</h3> {% endcomment %}
-    <div class="book_list">
-    <ul class="list-group list-group-flush">
+    {% comment %} <div class="book_list">
+    <ul class="list-group list-group-flush"> {% endcomment %} 
+    <div>
+    <div class="card" style="width: 25rem;">
+      <div class="card-body">
     {% for book in all_books %}
         <li="list-group-item"><a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
     {% endfor %} 
@@ -34,9 +37,11 @@
     
     </ul>
     </div>
+    
     <div class="icon">
-    <a href="{% url 'queriesapp:book_form' %}"><i class="fas fa-plus-circle"></i></a>
+    
     </div>
+    <button class="font"><a href="{% url 'queriesapp:book_form' %}">Add a Book</a></button>
 
 {% endblock %}
 </body>
