@@ -29,7 +29,9 @@
           </br>
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
-          </div>
+          </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          </div>          
       {% endif %}
       {% endfor %}
       
@@ -49,6 +51,7 @@
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
           </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
           </div>
       {% endif %}
       {% endfor %}
@@ -66,6 +69,7 @@
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
           </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
           </div>
           {% endif %}
           {% endfor %}

@@ -13,14 +13,15 @@
 }
 
 .card{
-    align-items: center;
+    align-items: center !important;
     text-align: left;
-    margin-left: 300px;
+    margin-left: 435px;
     margin-right: 300px;
     opacity: 200px;
-    border: tan solid;
     margin-top: 50px;
+    box-shadow: 5px 10px 8px #888888;
     font-family: 'Roboto Mono', monospace;
+    width: 500px;
    
 }
 
@@ -29,7 +30,14 @@
     text-align: center;
     margin-top: 10px;
     align-items: center !important;
+    width: 75px !important;
+    
 }
+
+input .button{
+    
+}
+
 
 .book_div{
     text-align: center;
