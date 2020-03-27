@@ -28,17 +28,18 @@
                     <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
                 {% endfor %} 
     </select> {% endcomment %}
-    
+   
     <div class="card">
       <div class="card-body">
-      <h6 class="button_agent"<a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></h6>
+      
       <fieldset>
       <label for="agent"></label>
         <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
                 {% for agent in all_agents %}
                     <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name}} | {{agent.company}} | {{agent.email}}</option>
                 {% endfor %} 
-        </select>
+        </select></br>
+        <h6 class="agent"><a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></h6>
       </fieldset>
     
 
@@ -62,7 +63,7 @@
         <label for="agent">Deadline to Respond:</label>
           <input placeholder="Deadline to Respond" id="expiration" type="date" name="expiration" value="{{query.expiration|date:"Y-m-d"}}"></br>
         <label for="agent">Notes:</label>
-          <input placeholder="Notes" id="notes" type="text" name="notes" value="{{query.notes}}"></br>
+          <input id="notes" type="text" name="notes" value="{{query.notes}}"></br>
         
             <label for="agent">Status:</label>
             <select placholder="Status" id="status_id" type="text" name="status_id" value"{{query.status_id}}">
