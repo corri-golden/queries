@@ -10,22 +10,20 @@
 {% block content %}
 
    
-  <a href="/queries/?bookid={{ query.book.id }}">Back</a>
+  <h4><a href="/queries/?bookid={{ query.book.id }}">Queries</a></h4>
   <h1 class="title">Query Details</h2>
     <div class="card">
       <div class="card-body"> 
-        <h5>{{ query.agent.agent_name }}</h5>
-        <h5>{{ query.agent.company }}</h5>
-        <h5> {{ query.agent.email }}</h5>
+        <h5>Agent's Name: {{ query.agent.agent_name }}</h5>
+        <h5>Agent's Company: {{ query.agent.company }}</h5>
+        <h5>Agent's Email: {{ query.agent.email }}</h5>
 
       <h5>Sent:{{ query.sent }}</h5>
     <h5>Deadline to Respond: {{ query.expiration }}</h5>
     <h5>Notes: {{query.notes}}</h5>
     <h5>Status: {{query.status}}</h5>
     <h5>Book: {{query.book}}</h5>
-    </div>
-    </div>
-  <form action="{% url 'queriesapp:query' query.id %}" method="POST">
+    <form action="{% url 'queriesapp:query' query.id %}" method="POST">
       {% csrf_token %}
       <input type="hidden" name="actual_method" value="DELETE">
       <button>Delete</button>
@@ -34,6 +32,9 @@
     {% csrf_token %}
     <button>Edit</button>
   </form>
+    </div>
+    </div>
+  
 {% endblock %}
 </body>
 </html>

@@ -35,12 +35,11 @@ button{
 
 .card{
     align-items: center;
-    text-align: center;
-    margin-left: 350px;
-    margin-right: 350px;
-    opacity: 200px;
-    border: tan solid;
+    text-align: left !important;
+    margin-left: 425px;
+    margin-right: 425px;
     margin-top: 50px;
+    box-shadow: 5px 10px 8px #888888;
    
 }
 

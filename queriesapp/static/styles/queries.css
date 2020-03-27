@@ -4,54 +4,83 @@
 
 }
 
+h2{
+    font-family: 'Roboto Mono', monospace !important;
+    text-align: center;
+}
+
+.card{
+    border: tan solid 2px !important;
+    flex-basis: 300px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: ivory;
+    padding: 5px;
+    
+
+}
+
+h4{
+    color: tan;
+}
+
+.card_pending{
+    background-color: ivory;
+    box-shadow: 5px 10px 8px #888888;
+    padding: 5px;
+    /* border: tan solid 2px !important; */
+    padding: 5px;
+    margin-top: 10px;
+
+}
+
+.card_rejected{
+    background-color: #d66464;
+    box-shadow: 5px 10px 8px gray;
+    padding: 5px;
+    /* border: tan solid 2px !important; */
+    padding: 5px;
+    margin-top: 10px;
+
+}
+
+.card_followup{
+    background-color: rgb(138, 146, 138);
+    /* border: tan 2px solid; */
+    box-shadow: 5px 10px 8px #888888;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+/* .rejected{
+    background-color: red;
+} */
+
 .title{
     font-family:"BaltimoreTypewriterKeys W05 Rg";
     text-align: center;
-    font-size: 75px;
+    font-size: 85px;
     
 }
 
-/* query_item{
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-    
-/* } */
+div a{
+    color: black !important;
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: none;
+}
 
+
+button{
+    background-color: tan;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 
 .query-container{
   display: flex;
-  /* justify-content: center;   */
+  justify-content: center;  
+  justify-content: space-evenly;
 }
 
-/* .flex_item{
-    display: flex;
-} */
 
-/* .queries { */
-    /* list-style: none;
-    display: flex; */
-    /* color: blue; */
-    /* border: black  */
-    /* flex-wrap: wrap;
-    justify-content: space-evenly; */
-/* } */
 
-/* .book {
-    flex-basis: 20%;
-    padding: 0 2em 0.5em 2em;
-    border: 1px solid gray;
-    margin: 1em;
-    padding: 1.5em;
-}
-
-.book__title {
-    font-size: 1.1em;
-}
-
-.book__description {
-    font-size: 0.75em;
-} */

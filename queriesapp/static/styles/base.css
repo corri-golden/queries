@@ -29,6 +29,10 @@ body {
     
 }
 
+.list-group-item{
+    color: black;
+}
+
 a {
     color: ivory !important;
     text-shadow: 1px 1px black;

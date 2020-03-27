@@ -34,6 +34,7 @@ def book_details(request, book_id):
         # # Reassign a property's value
         # book_to_update.book_name = form_data['book_name']
         book_to_update.num_of_pages = form_data['num_of_pages']
+        book_to_update.book_name = form_data['book_name']
             
         # # Save the change to the db
         book_to_update.save()

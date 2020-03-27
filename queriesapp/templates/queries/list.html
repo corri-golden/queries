@@ -10,11 +10,12 @@
     
     <h1 class="title">Queries</h1>
     {% if book.id is not null%}
-    <a href="{% url 'queriesapp:book' book.id %}">{{book}}</a>
+    <h4><a href="{% url 'queriesapp:book' book.id %}">{{book}}</a></h4>
     {% endif %}
     
     </br>
-    <a href="/queries/form?bookid={{ book.id }}">Add Query</a>
+    <h6><a href="/agents?bookid={{ book.id }}">Agent List</a></h6>
+    <h6><a href="/queries/form?bookid={{ book.id }}">Add Query</a></h6>
     
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     
@@ -22,48 +23,63 @@
       <div>
       <h2>Pending</h2>
         {% for query in all_queries %}
-      {% if query.status.id == 1 %}
-         <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a>
-          </br>
+        {% if query.status.id == 1 %}
+        <div class="card_pending"> 
+         <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a></br>
           {{query.agent.email}}
           </br>
-          {{query.sent}}-{{query.expiration}}
+          Sent: {{query.sent}}</br>
+          Deadline to Respond: {{query.expiration}}
           </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          </div>          
       {% endif %}
       {% endfor %}
+      
       </div>
+      
+    
+      
     
     <div>
     <h2>FollowUp</h2>
     {% for query in all_queries %}
-      {% if query.status.id == 2 %} 
-      <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a>
-          </br>
+      {% if query.status.id == 2 %}
+      <div class="card_followup"> 
+      <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a></br>
           {{query.agent.email}}
           </br>
-          {{query.sent}}-{{query.expiration}}
+          Sent: {{query.sent}}</br>
+          Deadline to Respond: {{query.expiration}}
           </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          </div>
       {% endif %}
       {% endfor %}
+    
     </div>
 
       <div>
       <h2>Rejected</h2>
     {% for query in all_queries %}
       {% if query.status.id == 3 %}
-          <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a>
-          </br>
+        <div class="card_rejected"> 
+          <a href="{% url 'queriesapp:query' query.id %}"> {{query.agent.agent_name}}<a></br>
           {{query.agent.email}}
           </br>
-          {{query.sent}}-{{query.expiration}}
+          Sent: {{query.sent}}</br>
+          Deadline to Respond: {{query.expiration}}
           </br>
+          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          </div>
           {% endif %}
           {% endfor %}
-        </div>
+        
       </div>
+    </div>
 
       {% comment %} <a href="{% url 'queriesapp:agents' %}">Agent List</a> {% endcomment %}
-      <a href="/agents?bookid={{ book.id }}">Agent List</a>
+      
     {% endblock %}
   </body>
 </html>

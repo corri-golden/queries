@@ -14,11 +14,10 @@
 
 .card{
     align-items: center;
-    text-align: center;
-    margin-left: 350px;
-    margin-right: 350px;
+    text-align: left;
+    margin-left: 425px;
+    margin-right: 425px;
     opacity: 200px;
-    border: tan solid;
     margin-top: 50px;
     font-family: 'Roboto Mono', monospace;
    
@@ -28,6 +27,9 @@
     background-color: tan;
     text-align: center;
     margin-top: 10px;
+    color: ivory;
+    text-shadow: 2px 2px black;
+    width: 75px;
 }
 
 .book_div{

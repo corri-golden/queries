@@ -6,12 +6,9 @@
 
 
 .book_logo {
-    color: black;
     text-align: center;
-    /* text-shadow: 1px 1px black; */
-    font-size: 75px;
+    font-size: 85px;
     font-family:"BaltimoreTypewriterKeys W05 Rg";
-    font-weight: bolder;
     margin-top: 75px;
 }
 
@@ -19,6 +16,24 @@ a .icon {
     font-family: 'Roboto Mono', monospace;
     color: tan;
     
+}
+
+button{
+    background-color: tan;
+    text-align: left;
+    align-items: center !important;
+    width: 150px !important;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: black;
+    
+    
+}
+
+.laker{
+    color: black !important;
+    text-shadow: none;
+    margin-top: 25px;
 }
 
 .icon{
@@ -39,6 +54,20 @@ a .icon {
     text-align: center;
 }
 
+div .card {
+    justify-content: center !important;
+    margin-left: 485px;
+    text-align: left;
+    box-shadow: 5px 10px 8px #888888;
+    color: black;
+    height: 140px;
+    
+}
+
+
+
+
+
 /* .book_card {background-color: white;
 box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 color: white;
@@ -47,10 +76,10 @@ height: 150px;
 width: 250px;
 } */
 
-.book_card{
+/* .book_card{
     text-align: center;
     border-bottom: solid 5px tan; 
-}
+} */
 
 .fas fa-plus-circle{
     margin-top: 250px;

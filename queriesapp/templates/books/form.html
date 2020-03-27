@@ -24,13 +24,19 @@
       <div class="card-body">
         {% comment %} <div> {% endcomment %}
           <label for="book_name">Book:</label>
-          <input  id="book_name" type="text" placeholder="Book Title" name="book_name" value="{{book.book_name}}"></br>
-        {% comment %} </div>
-        <div> {% endcomment %}
-          <label for="num_of_pages">Number of Pages: </label>
-          <input placeholder="Number of Pages" min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
+          <input id="book_name" type="text"  name="book_name" value="{{book.book_name}}"></br> 
         
-   
+          <label for="num_of_pages">Number of Pages:</label>
+          <input min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
+        
+    {% if book.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input class="button" type="submit" value="Update" />
+        {% else %}
+            <input class="button" type="submit" value="Create" />
+        {% endif %}
+        </div>
+    {% endblock %}
     {% comment %} {% if book.id is not None %}
       <fieldset>
           <label for="book_name">Book</label>
@@ -60,14 +66,11 @@
          </div>
         </div> 
       </div>
-      {% if book.id is not None %}
-            <input type="hidden" name="actual_method" value="PUT">
-            <input class="button" type="submit" value="Update" />
-        {% else %}
-            <input class="button" type="submit" value="Create" />
-        {% endif %}
-        </div>
-    {% endblock %}
+      
+
+
+
+
   </body>
 </html>  
 
