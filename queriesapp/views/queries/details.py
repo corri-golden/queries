@@ -46,17 +46,17 @@ def query_details(request, query_id):
         query_to_update.save()
 
         # # retrieve it first:
-        agent_to_update = Agent.objects.get(pk=query_to_update.agent_id)
+        # agent_to_update = Agent.objects.get(pk=query_to_update.agent_id)
         # agent_to_update.email = form_data['email']
         # agent_to_update.company = form_data['company']
         
-        agent_to_update.save()
+        # agent_to_update.save()
 
         # status_to_update = Status.objects.get(pk=status_to_update.status_id)
         # status_to_update.status
 
         # return redirect(reverse('queriesapp:queries', kwargs={'pk':query_to_update.id}))
-        return redirect(reverse('queriesapp:queries'))
+        return redirect(f"/queries/?bookid={form_data['book_id']}")
     
     if (
         "actual_method" in form_data

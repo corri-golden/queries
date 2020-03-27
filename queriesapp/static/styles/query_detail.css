@@ -27,16 +27,21 @@
 
 .button{
     background-color: tan;
-    text-align: center;
+    text-align: left;
     /* margin-top: px; */
-    align-items: center;
+    
     width: 125px;
+    
 }
 
 button{
     background-color: tan;
     width: 175px;
     text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
+    align-items: left;
+
 }
 
 .book_div{

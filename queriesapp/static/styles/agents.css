@@ -6,18 +6,19 @@
 
 .title {
     text-align: center;
-    font-size: 75px;
+    font-size: 95px;
     font-family:"BaltimoreTypewriterKeys W05 Rg";
     margin-top: 35px;
 }
 
 .agent_div{
-    border: tan solid 5px;
+    
     list-style-type: none;
-    background-color: ivory;
+    background-color: white;
     /* box-shadow: 10px 10px 5px grey; */
     width: 400px;
     padding: 5px;
+    box-shadow: 5px 10px 8px #888888;
     margin: 10px;
     font-family: 'Roboto Mono', monospace;
     margin-top: 45px;

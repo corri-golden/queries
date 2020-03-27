@@ -63,7 +63,7 @@
         <label for="agent">Deadline to Respond:</label>
           <input placeholder="Deadline to Respond" id="expiration" type="date" name="expiration" value="{{query.expiration|date:"Y-m-d"}}"></br>
         <label for="agent">Notes:</label>
-          <input id="notes" type="text" name="notes" value="{{query.notes}}"></br>
+          <textarea class="form-control" id="notes" type="text" name="notes" rows="3">{{query.notes}}</textarea></br>
         
             <label for="agent">Status:</label>
             <select placholder="Status" id="status_id" type="text" name="status_id" value"{{query.status_id}}">
@@ -83,7 +83,12 @@
                     <option {% if book.id == query.book_id %}selected{% endif %} value="{{ book.id }}">{{ book.book_name}}</option>
                 {% endfor %} 
       </select></br>
-    
+      {% if query.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input class="button" type="submit" value="Update" />
+        {% else %}
+            <input class="button" type="submit" value="Create" />
+        {% endif %}
 
       {% comment %} <fieldset>
           <label for="book_id">Book: </label>
@@ -100,12 +105,7 @@
     
     </div>
     </div>
-    {% if query.id is not None %}
-            <input type="hidden" name="actual_method" value="PUT">
-            <input class="button" type="submit" value="Update" />
-        {% else %}
-            <input class="button" type="submit" value="Create" />
-        {% endif %}
+    
     {% endblock %}
   </body>
 </html>

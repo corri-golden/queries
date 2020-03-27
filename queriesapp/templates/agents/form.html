@@ -20,9 +20,12 @@
     {% csrf_token %}
       <div class="card">
         <div class="card-body">
-          <input placeholder="Agent's Name" id="agent_name" type="text" name="agent_name" value="{{ agent.agent_name }}">
-          <input placeholder="Agent's Company" id="company" type="text" name="company" value="{{ agent.company }}">
-          <input placeholder="Agent's Email" id="email" type="text" name="email" value="{{ agent.email }}">
+          <label for="Agent's Name">Agent's Name:</label>
+          <input id="agent_name" type="text" name="agent_name" value="{{ agent.agent_name }}"></br>
+          <label for="Agent's Company">Agent's Company</label>
+          <input id="company" type="text" name="company" value="{{ agent.company }}"></br>
+          <label for="Agent's Email">Agent's Email</label>
+          <input id="email" type="text" name="email" value="{{ agent.email }}"></br>
         
         {% comment %} <input type="submit" value="Add It" /> {% endcomment %}
 

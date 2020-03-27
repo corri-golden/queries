@@ -18,8 +18,7 @@
     margin-left: 200px;
     margin-right: 200px;
     opacity: 200px;
-    border: tan solid;
-    /* box-shadow: 4px 4px gray; */
+    box-shadow: 5px 10px 8px #888888;
     margin-top: 50px;
     font-family: 'Roboto Mono', monospace;
    
@@ -31,11 +30,25 @@ h6 a{
     margin-top: 18px;
 }
 
-.button{
-    background-color: tan;
-    text-align: center;
+h6{
     margin-top: 10px;
-    align-items: center;
+}
+
+#sent{
+    color: black !important;
+}
+
+#expiration{
+    color: black !important;
+}
+
+.button{
+        background-color: tan;
+        text-align: center;
+        margin-top: 10px;
+        color: ivory;
+        text-shadow: 1px 1px black;
+        width: 85px;
 }
 
 .book_div{
@@ -47,7 +60,13 @@ input{
     margin-top: 5px;
     width: 250px;
     align-items: center !important;
+    color: ivory;
     
+    
+}
+
+input .button{
+    text-shadow: 2px 2px black;
 }
 
 .button_agent{

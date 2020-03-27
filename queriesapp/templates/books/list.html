@@ -20,7 +20,7 @@
     <div class="card" style="width: 25rem;">
       <div class="card-body">
     {% for book in all_books %}
-        <li="list-group-item"><a href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
+        <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
     {% endfor %} 
     
     {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}

@@ -7,7 +7,7 @@
 
 .book_logo {
     text-align: center;
-    font-size: 75px;
+    font-size: 85px;
     font-family:"BaltimoreTypewriterKeys W05 Rg";
     margin-top: 75px;
 }
@@ -28,6 +28,12 @@ button{
     color: black;
     
     
+}
+
+.laker{
+    color: black !important;
+    text-shadow: none;
+    margin-top: 25px;
 }
 
 .icon{
@@ -54,8 +60,10 @@ div .card {
     text-align: left;
     box-shadow: 5px 10px 8px #888888;
     color: black;
-    height: 180px;
+    height: 140px;
+    
 }
+
 
 
 

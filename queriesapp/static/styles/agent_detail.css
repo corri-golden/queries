@@ -15,6 +15,9 @@ button{
     background-color: tan;
     width: 125px;
     text-align: center;
+    margin-top: 5px;
+    color: ivory;
+    text-shadow: 2px 2px black;
 }
 
 .detail{
@@ -35,12 +38,12 @@ button{
 
 .card{
     align-items: center;
-    text-align: center;
-    margin-left: 350px;
-    margin-right: 350px;
+    text-align: left;
+    margin-left: 485px;
+    margin-right: 485px;
     opacity: 200px;
-    border: tan solid;
     margin-top: 50px;
+    box-shadow: 5px 10px 8px #888888;
     font-family: 'Roboto Mono', monospace;
    
 }
