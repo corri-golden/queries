@@ -38,6 +38,7 @@ a {
     text-shadow: 1px 1px black;
     text-decoration: none;
     font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
 }
 
 body{
