@@ -19,9 +19,7 @@ h2{
 
 }
 
-h4{
-    color: tan;
-}
+
 
 .card_pending{
     background-color: ivory;
@@ -58,7 +56,7 @@ h4{
 .title{
     font-family:"BaltimoreTypewriterKeys W05 Rg";
     text-align: center;
-    font-size: 85px;
+    font-size: 100px;
     
 }
 
