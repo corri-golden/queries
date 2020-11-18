@@ -12,7 +12,7 @@ Queries was developed using the following:
 
 
 ## Instructions for installing Queries
-Clone this repo using the following command then cd into it
+### Clone this repo using the following command then cd into it
 
 - git clone git@github.com:corri-golden/queries.git
 - cd queries
@@ -30,6 +30,7 @@ Clone this repo using the following command then cd into it
 ### Install the app's dependencies
 
 - pip install -r requirements.txt
+- pip install djangorestframework
 
 ### Build your database from the existing models
 
@@ -42,10 +43,7 @@ Clone this repo using the following command then cd into it
 
 ### Populate your database with initial data from fixtures files: (NOTE: every time you run this it will remove exisiting data and repopulate the tables)
 
-python manage.py loaddata query
-python manage.py loaddata book
-python manage.py loaddata agent
-python manage.py loaddata status
+- python manage.py loaddata status
 
 ### Run your dev server
 
