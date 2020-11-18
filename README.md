@@ -14,7 +14,8 @@ Queries was developed using the following:
 ## Instructions for installing Queries
 Clone this repo using the following command then cd into it
 
-git clone git@github.com:corri-golden/queries.git
+- git clone git@github.com:corri-golden/queries.git
+- cd queries
 
 #### For Mac users: create your virtual environment in Terminal
 
