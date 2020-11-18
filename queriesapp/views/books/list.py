@@ -27,17 +27,6 @@ def book_list(request):
 
     elif request.method == 'POST':
         form_data = request.POST
-        #instantiate
-        # new_agent = Agent(
-        #     agent_name = form_data['agent_name'],
-        #     company = form_data['company'],
-        #     email = form_data['email'],
-        #     user_id = request.user.id
-        # )
-        # # and then save to the db
-        # print(new_agent.user.username)
-        # new_agent.save()
-
         new_book = Book.objects.create(
             book_name = form_data['book_name'],
             num_of_pages = form_data['num_of_pages'],
