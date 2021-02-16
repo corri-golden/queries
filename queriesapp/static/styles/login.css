@@ -3,10 +3,42 @@
     src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
 }
 
+body {
+    background-color: white;
+}
+
+
 
 .login {
     text-align: center; 
     font-family: 'Roboto Mono', monospace;
+    display: flex;
+}
+
+.column1 {
+    margin-top: 225px;
+    width: 50%;
+    margin-left: 50px
+}
+
+.column2 {
+    padding-top: 60px;
+    margin-top: 250px;
+    margin-left: 100px;
+    margin-right: 100px;
+    box-shadow: 5px 10px 8px #888888;
+    border-radius: 25px;
+    width: 50%;
+    border: 2px solid black
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    width: 300px;
+    height: 30px
 }
 
 h1 {
@@ -25,12 +57,14 @@ h1 {
 /* } */
 
 body{
-    background-color: rgb(191,190, 188);
+    background-color: white;
 }
 
 button {
     background: tan;
     margin-top: 7px;
+    font-size: 18px;
+    box-shadow: 5px 10px 8px #888888;
     font-family: 'Roboto Mono', monospace;
 }
 

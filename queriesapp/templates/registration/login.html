@@ -8,9 +8,11 @@
 {% block content %}
 
 <div class="login">
+<div class="column1">
 <h1>Queries</h1>
-
-<form method="post">
+<h3>Keeping track of the status of your queries all in one place.</h3>
+</div>
+<form class="column2" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign In</button>
