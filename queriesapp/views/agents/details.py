@@ -19,8 +19,8 @@ def agent_details(request, agent_id):
         form_data = request.POST
 
     if (
-            "actual_method" in form_data
-            and form_data["actual_method"] == "PUT"
+        "actual_method" in form_data
+        and form_data["actual_method"] == "PUT"
         ):
 
         # # retrieve it first:
