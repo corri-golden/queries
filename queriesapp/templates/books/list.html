@@ -10,38 +10,28 @@
 {% block content %}
     
     
-    
-    <h1 class="book_logo">B o o k s</h1>
-    {% comment %} <div class="book_card">
-        {% comment %} <h3 class="book_title">Books</h3> {% endcomment %}
-    {% comment %} <div class="book_list">
-    <ul class="list-group list-group-flush"> {% endcomment %} 
-    <div>
-    <div class="card" style="width: 25rem;">
-      <div class="card-body">
-    {% for book in all_books %}
-        <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
-    {% endfor %} 
-    
-    {% comment %} <a href="{% url 'queriesapp:queries' %}">The Ones Not Forgotten</a> {% endcomment %}
-    
-    {% comment %} <div class="book_drop">
-          {% comment %} <label for="Books">Status:</label> {% endcomment %}
-            {% comment %} <select id="book_id" type="text" name="book_id" value"{{book.id}}"> {% endcomment %}
-                {% comment %} {% for book in all_books %}
-                    <option value="" disabled selected>Select a Book</option>
-                    <option value="{{ book.id }}">{{ book.book_name }}</option>
-                {% endfor %} 
-            </select>
-    </div>  {% endcomment %}
-    
-    </ul>
+<h1 class="book_logo">Queries</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            {% for book in all_books %}
+                <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
+            {% endfor %}     
+        </div>
+            <button class="font"><a href="{% url 'queriesapp:book_form' %}">Add a Book</a></button>
     </div>
-    
-    <div class="icon">
-    
+
+    <div class="card">
+        <div class="card-body">
+            {% for book in all_books %}
+                <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
+            {% endfor %}     
+        </div>
+            <button class="font"><a href="{% url 'queriesapp:book_form' %}">Add a Book</a></button>
     </div>
-    <button class="font"><a href="{% url 'queriesapp:book_form' %}">Add a Book</a></button>
+</div>
+    
+    
 
 {% endblock %}
 </body>

@@ -1,7 +1,12 @@
-@font-face{
+/* @font-face{
     font-family:"BaltimoreTypewriterKeys W05 Rg";
     src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
 
+} */
+
+@font-face{
+    font-family:"BaltimoreTypewriterKeys W05 Rg";
+    src: url("Fonts/5167505/d21d6e05-4a0a-4604-b2f5-5d5c81fa410c.woff2") format("woff2"),url("Fonts/5167505/0748a2a9-15ec-4b71-ba69-6b46d841b6e7.woff") format("woff");
 }
 
 
@@ -55,31 +60,24 @@ button{
 }
 
 div .card {
-    justify-content: center !important;
-    margin-left: 485px;
+    /* justify-content: center !important; */
+    /* margin-left: 485px; */
     text-align: left;
     box-shadow: 5px 10px 8px #888888;
     color: black;
     height: 140px;
-    
+    width: 50%  
+}
+
+.container {
+    display: flex
 }
 
 
 
 
 
-/* .book_card {background-color: white;
-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-color: white;
-text-align: center !important;
-height: 150px;
-width: 250px;
-} */
 
-/* .book_card{
-    text-align: center;
-    border-bottom: solid 5px tan; 
-} */
 
 .fas fa-plus-circle{
     margin-top: 250px;
