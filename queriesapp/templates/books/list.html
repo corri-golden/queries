@@ -10,10 +10,11 @@
 {% block content %}
     
     
-<h1 class="book_logo">Queries</h1>
+{% comment %} <h1 class="book_logo">Queries</h1> {% endcomment %}
 <div class="container">
     <div class="card">
         <div class="card-body">
+            <h2>Novels</h2>
             {% for book in all_books %}
                 <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
             {% endfor %}     
@@ -23,11 +24,12 @@
 
     <div class="card">
         <div class="card-body">
+            <h2>Short Stories</h2>
             {% for book in all_books %}
                 <li="list-group-item"><a class="laker" href="/queries?bookid={{book.id}}"> {{book.book_name}}<a></li></br>
             {% endfor %}     
         </div>
-            <button class="font"><a href="{% url 'queriesapp:book_form' %}">Add a Book</a></button>
+            <button class="font1"><a href="{% url 'queriesapp:book_form' %}">Add a Short Story</a></button>
     </div>
 </div>
     
