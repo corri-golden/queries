@@ -23,8 +23,8 @@
     <div class="card">
       <div class="card-body">
         {% comment %} <div> {% endcomment %}
-          <label for="book_name">Book:</label>
-          <input id="book_name" type="text"  name="book_name" value="{{book.book_name}}"></br> 
+          <label for="book_name">Title:</label>
+          <input class="input1" id="book_name" type="text"  name="book_name" value="{{book.book_name}}"></br> 
         
           <label for="num_of_pages">Number of Pages:</label>
           <input min="90" id="num_of_pages" type="number" name="num_of_pages" value="{{book.num_of_pages}}"></br>
@@ -33,34 +33,10 @@
             <input type="hidden" name="actual_method" value="PUT">
             <input class="button" type="submit" value="Update" />
         {% else %}
-            <input class="button" type="submit" value="Create" />
+            <input class="button" type="submit" value="Add" />
         {% endif %}
         </div>
     {% endblock %}
-    {% comment %} {% if book.id is not None %}
-      <fieldset>
-          <label for="book_name">Book</label>
-          <input id="book_name" type="text" name="book_name" value="{{book.book_name}}">
-      </fieldset> 
-      <fieldset>
-          <label for="num_of_pages">Number of Pages: </label>
-          <input id="num_of_pages" min="90" type="number" name="num_of_pages" value="{{book.num_of_pages}}">
-      </fieldset> {% endcomment %}
-      {% comment %} <fieldset>
-          <label for="location">Library: </label>
-          <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                    <option value="{{ library.id }}">{{ library.title }}</option>
-                {% endfor %}
-          </select>
-      </fieldset> {% endcomment %}
-      {% comment %} {% if book.id is not None %}
-            <input type="hidden" name="actual_method" value="PUT">
-            <input class="button" type="submit" value="Update" />
-        {% else %}
-            <input class="button" type="submit" value="Create" />
-        {% endif %} {% endcomment %}
-        {% comment %} </div> {% endcomment %}
          </form>
          
          </div>
@@ -75,21 +51,5 @@
 </html>  
 
 
-      {% comment %} test {% endcomment %}
-      {% comment %} <form> {% endcomment %}
-  {% comment %} <div class="form-group"> {% endcomment %}
-    {% comment %} <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> {% endcomment %}
-  {% comment %} </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div> {% endcomment %}
-  {% comment %} <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> {% endcomment %}
-  {% comment %} <button type="submit" class="btn btn-primary">Submit</button>
-</form> {% endcomment %}
-{% comment %} endtest {% endcomment %}
+     
         
