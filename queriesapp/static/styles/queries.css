@@ -19,6 +19,13 @@ h2{
 
 }
 
+.add_query {
+    background-color: ivory;
+    box-shadow: 5px 10px 8px #888888;
+    width: 125px;
+    height: 25px 
+}
+
 
 
 .card_pending{

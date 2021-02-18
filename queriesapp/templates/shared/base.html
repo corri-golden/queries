@@ -24,6 +24,9 @@
         <ol class="navList">
             {% if user.is_authenticated %}
             <li class="navList__route"><a href="{% url 'queriesapp:home' %}">Books  |</a></li>
+            {% if book.id %}
+            <li><a href="/agents?bookid={{ book.id }}">Agent List |</a></li>
+            {% endif %}
             <li class="navList__route"><a href="{% url 'queriesapp:logout' %}">Log Out</a></li> 
             {% else %}
             <li class="navList__route"><a href="{% url 'queriesapp:login' %}">Login</a></li>

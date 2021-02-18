@@ -7,15 +7,17 @@
 {% endblock %}
 
 {% block content %}  
-    
-    <h1 class="title">Queries</h1>
+
     {% if book.id is not null%}
     <h4><a href="{% url 'queriesapp:book' book.id %}">{{book}}</a></h4>
     {% endif %}
     
+    <h1 class="title">Queries</h1>
+    
+    
     </br>
-    <h6><a href="/agents?bookid={{ book.id }}">Agent List</a></h6>
-    <h6><a href="/queries/form?bookid={{ book.id }}">Add Query</a></h6>
+    {% comment %} <h6><a href="/agents?bookid={{ book.id }}">Agent List</a></h6> {% endcomment %}
+    <h6 class="add_query"><a href="/queries/form?bookid={{ book.id }}">Add Query</a></h6>
     
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     
