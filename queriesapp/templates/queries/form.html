@@ -8,11 +8,6 @@
 {% endblock %}
 
 {% block content %}
-    {% comment %} <h1>New Query</h1> {% endcomment %}
-    
-    
-    
-    
     {% if query.id is not None %}
       <h1 class="book_title">Edit Query</h1>
       <form action="{% url 'queriesapp:query' query.id %}" method="post">
@@ -23,11 +18,7 @@
     {% endif %}
       {% csrf_token %}
       
-      {% comment %} <select id="agent_id" type="text" name="agent_id" value"{{query.agent_id}}">
-                {% for agent in all_agents %}
-                    <option value="{{ agent.id }}">{{ agent.agent_name }}</option>
-                {% endfor %} 
-    </select> {% endcomment %}
+      
    
     <div class="card">
       <div class="card-body">
@@ -39,7 +30,7 @@
                     <option {% if agent.id == query.agent_id %}selected{% endif %} value="{{ agent.id }}">{{ agent.agent_name}} | {{agent.company}} | {{agent.email}}</option>
                 {% endfor %} 
         </select></br>
-        <h6 class="agent"><a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></h6>
+        <button class="agent"><a href="{% url 'queriesapp:agents_form' %}">Add Agent</a></button>
       </fieldset>
     
 
@@ -87,7 +78,7 @@
             <input type="hidden" name="actual_method" value="PUT">
             <input class="button" type="submit" value="Update" />
         {% else %}
-            <input class="button" type="submit" value="Create" />
+            <button class="agent" type="submit" value="Create">Create</button>
         {% endif %}
 
       {% comment %} <fieldset>
