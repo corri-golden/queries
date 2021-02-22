@@ -59,8 +59,8 @@ h6{
         background-color: tan;
         text-align: center;
         margin-top: 10px;
-        color: ivory;
-        text-shadow: 1px 1px black;
+        color: black;
+        font-size: 16;
         width: 85px;
 }
 
@@ -79,23 +79,29 @@ input{
 }
 
 input .button{
-    text-shadow: 2px 2px black;
+    /* text-shadow: 2px 2px black;
+    color: blac */
 }
 
 .button_agent{
     text-align: center;
     background-color: tan;
     width: 150px;
-    border: 1px solid black
+    border: 1px solid black;
+    font-size: 16px;
     
 }
 
 button {
     margin-top: 5px;
     background-color: tan;  
-    width: 135px;
-    height: 35px;
-    font-size: 20px;
+    width: 125px;
+    height: 29px;
+    font-size: 16px;
+}
+
+a {
+    font-size: 16px;
 }
 
 button.font{
@@ -106,6 +112,7 @@ button.font{
     margin-left: 20px;
     margin-bottom: 15px;
     color: black;
+    font-size: 16px;
     
     
 }
