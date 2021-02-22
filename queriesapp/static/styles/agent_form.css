@@ -12,6 +12,14 @@
     margin-top: 75px;
 }
 
+#company {
+    width: 230px
+}
+
+#agent_name{
+    width: 258px
+}
+
 .card{
     align-items: center;
     text-align: left;
@@ -21,19 +29,25 @@
     opacity: 200px;
     margin-top: 50px;
     font-family: 'Roboto Mono', monospace;
+    background-color: rgb(252, 252, 245);
    
 }
 
 .button{
     background-color: tan;
     text-align: center;
-    margin-top: 10px;
-    color: ivory;
-    text-shadow: 2px 2px black;
-    width: 75px;
-    
-
+    width: 135px;
+    height: 35px;
+    font-size: 16px;
 }
+
+/* button {
+    margin-top: 5px;
+    background-color: tan;  
+    width: 135px;
+    height: 35px;
+    font-size: 20px;
+} */
 
 .book_div{
     text-align: center;
