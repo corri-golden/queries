@@ -26,6 +26,7 @@ def query_list(request):
         
         # taco is the variable that holds the book we got back from the filter
         template = 'queries/list.html'
+        print(all_queries, "HERE")
         context = {
             'all_queries': all_queries,
             'book': all_tacos,

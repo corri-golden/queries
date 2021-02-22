@@ -15,14 +15,14 @@
 .card{
     align-items: center;
     text-align: left;
-    margin-left: 200px;
-    margin-right: 200px;
+    /* width: 600px; */
+    margin-left: 350px;
+    margin-right: 350px;
     opacity: 200px;
     box-shadow: 5px 10px 8px #888888;
-    /* box-shadow: 4px 4px gray; */
+    background-color: rgb(252, 252, 245);
     margin-top: 50px;
-    font-family: 'Roboto Mono', monospace;
-   
+    font-family: 'Roboto Mono', monospace; 
 }
 
 .button{
@@ -38,11 +38,16 @@ button{
     background-color: tan;
     width: 175px;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px black;
+    color: black;
     align-items: left;
 
 }
+
+button.delete{
+    background-color: red;
+}
+
+
 
 .book_div{
     text-align: center;

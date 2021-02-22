@@ -22,6 +22,7 @@
     {% comment %} <a href="{% url 'queriesapp:agents_list' %}">Agent List</a> {% endcomment %}
     
     <div class="query-container">
+      {% comment %} <h1>{{user.id}}</h1> {% endcomment %}
       <div>
       <h2>Pending</h2>
         {% for query in all_queries %}
@@ -33,7 +34,7 @@
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
           </br>
-          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          <button><a class="details" href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
           </div>          
       {% endif %}
       {% endfor %}
@@ -54,7 +55,7 @@
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
           </br>
-          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          <button><a class="details" href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
           </div>
       {% endif %}
       {% endfor %}
@@ -72,7 +73,7 @@
           Sent: {{query.sent}}</br>
           Deadline to Respond: {{query.expiration}}
           </br>
-          <button><a href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
+          <button><a class="details" href="{% url 'queriesapp:query' query.id %}" >Details</a></button>
           </div>
           {% endif %}
           {% endfor %}

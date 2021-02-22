@@ -71,6 +71,11 @@ div a{
     color: black !important;
     font-family: 'Roboto Mono', monospace;
     text-shadow: none;
+    
+}
+
+.details {
+    font-size: 16px;
 }
 
 
@@ -78,6 +83,7 @@ button{
     background-color: tan;
     margin-top: 5px;
     margin-bottom: 5px;
+    
 }
 
 
