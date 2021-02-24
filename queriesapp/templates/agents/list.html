@@ -10,6 +10,13 @@
 
     <h4><a href="/queries/?bookid={{ book_id }}">Queries</a></h4>
     <h1 class="title">Agents</h1>
+    <div>
+          <form  action="{% url 'queriesapp:agents' %}" method="POST">
+          {% csrf_token %}
+          <input name="agent" type="search" placeholder="Agent Name or Company Name" aria-label="Search">
+          <button class="search_button" type="submit">Search Agent</button>
+          </form>
+    </div>
     
     
     
