@@ -2,6 +2,7 @@ from django.shortcuts import render, render, reverse, redirect
 from queriesapp.models import Agent
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 
 
@@ -9,7 +10,13 @@ def agent_list(request):
     if request.method == 'GET':
         current_user = request.user.id
 
-        all_agents = Agent.objects.filter(user_id=current_user).all()
+        search_agent = request.GET.get('agent_search', '')
+        print(search_agent, "0000000000")
+
+        if search_agent:
+            all_agents = Agent.objects.filter(Q(agent_name__icontains=search_agent))
+        else:
+            all_agents = Agent.objects.filter(user_id=current_user).all()
 
     
         
@@ -26,17 +33,7 @@ def agent_list(request):
 
     elif request.method == 'POST':
         form_data = request.POST
-        #instantiate
-        # new_agent = Agent(
-        #     agent_name = form_data['agent_name'],
-        #     company = form_data['company'],
-        #     email = form_data['email'],
-        #     user_id = request.user.id
-        # )
-        # # and then save to the db
-        # print(new_agent.user.username)
-        # new_agent.save()
-
+        
         new_agent = Agent.objects.create(
             agent_name = form_data['agent_name'],
             company = form_data['company'],
