@@ -43,3 +43,20 @@ def agent_list(request):
         
 
         return redirect(reverse('queriesapp:queries_form'))
+
+
+
+def reset(request):
+    if request.method == 'GET':
+        current_user = request.user.id
+
+        all_agents = Agent.objects.filter(user_id=current_user).all()
+        template = 'agents/list.html'
+        bookid = request.GET.get('bookid', None) 
+        context = {
+            'all_agents': all_agents,
+            'book_id': bookid,
+        }   
+
+
+        return render(request, template, context)

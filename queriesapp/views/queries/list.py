@@ -53,6 +53,8 @@ def query_list(request):
 
 
         return redirect(f"/queries/?bookid={form_data['book_id']}")
+
+
         
         
     

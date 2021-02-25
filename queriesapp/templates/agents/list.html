@@ -16,6 +16,13 @@
           <input name="agent_search" type="search" placeholder="Agent Name or Company Name">
           {% comment %} <button class="search_button" type="submit">Search Agent</button> {% endcomment %}
           </form>
+          <form action="{% url 'queriesapp:agents' %}" method="GET">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="GET">
+            <button name="reset" class="search_button" type="submit">Reset</button>
+          </form>
+          
+          
     </div>
     
     

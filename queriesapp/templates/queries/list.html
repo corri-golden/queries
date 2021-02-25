@@ -11,8 +11,13 @@
     {% if book.id is not null%}
     <h4><a href="{% url 'queriesapp:book' book.id %}">{{book}}</a></h4>
     {% endif %}
-    
+    <div>
     <h1 class="title">Queries</h1>
+    <form class="query_input" action="{% url 'queriesapp:queries' %}">
+          {% csrf_token %}
+          <input name="query_search" type="search" placeholder="Agent/Company">
+          </form>
+    </div>
     
     
     </br>
