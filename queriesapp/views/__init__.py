@@ -12,3 +12,4 @@ from .auth.registration import register_user
 from .queries.form import queries_edit_form
 from .books.detail import book_details
 from .status.list import status_list
+from .agents.list import reset

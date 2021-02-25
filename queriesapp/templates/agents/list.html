@@ -11,11 +11,18 @@
     <h4><a href="/queries/?bookid={{ book_id }}">Queries</a></h4>
     <h1 class="title">Agents</h1>
     <div>
-          <form  action="{% url 'queriesapp:agents' %}" method="POST">
+          <form  action="{% url 'queriesapp:agents' %}">
           {% csrf_token %}
-          <input name="agent" type="search" placeholder="Agent Name or Company Name" aria-label="Search">
-          <button class="search_button" type="submit">Search Agent</button>
+          <input name="agent_search" type="search" placeholder="Agent Name or Company Name">
+          {% comment %} <button class="search_button" type="submit">Search Agent</button> {% endcomment %}
           </form>
+          <form action="{% url 'queriesapp:agents' %}" method="GET">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="GET">
+            <button name="reset" class="search_button" type="submit">Reset</button>
+          </form>
+          
+          
     </div>
     
     
