@@ -4,7 +4,7 @@ from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
 
-#This gets all the queries that the logged in user has added.
+#This gets all the queries that the logged in user has added.....
 @login_required
 def query_list(request):
     if request.method == 'GET':
